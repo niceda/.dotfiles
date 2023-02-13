@@ -1,8 +1,0 @@
-acpitool
-eudic
-google-chrome
-libxft-bgra-git
-nvim-packer-git
-skippy-xd-git
-stylua
-ttf-twemoji-color
