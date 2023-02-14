@@ -18,6 +18,14 @@ stow */ # Everything (the '/' ignores the README)
 stow zsh # Just my zsh config
 ```
 
-## Programs
+### tmux
 
-An updated list of all the programs I use can be found in the `packages` directory
+参考配置 https://github.com/gpakosz/.tmux
+
+```bash
+cd
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cd ~/dotfiles
+stow tmux
+```
