@@ -1,0 +1,5 @@
+{
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.lens.enable": true,
+  "rust-analyzer.lens.references": true
+}
