@@ -21,27 +21,14 @@ set info 'size'
 set dircounts
 
 # ========== Commands ==========
+cmd open &{{
+    case $(file --mime-type -Lb $f) in
+        text/*) lf -remote "send $id \$$EDITOR \$fx";;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
-
-# Create a directory with the selected items
-cmd new-folder-with-selection ${{
-  set -f
-  printf "Directory name: "
-  read newd
-  mkdir -- "$newd"
-  mv -- $fx "$newd"
-}}
-
-cmd chmod ${{
-  printf "\nMode Bits: "
-  read ans
-  for file in "$fx"
-  do
-    chmod $ans $file
-  done
-  lf -remote 'send reload'
-}}
 
 cmd extract ${{
   set -f
@@ -75,19 +62,6 @@ cmd zip ${{
 
 cmd trash %set -f; mv $fx ~/.trash
 
-cmd select-all :unselect; invert
-
-# Copy the file names (including extension) of the selections separated by \n
-cmd copy-filename ${{
-  names="$(echo $fx | tr ' ' '\n' | xargs -I{} basename {})"
-  echo $names | tr ' ' '\n' | pbcopy
-}}
-
-# Copy the absolute paths of selections separated by \n
-cmd copy-absolute-path ${{
-  echo $fx | tr ' ' '\n' | pbcopy
-}}
-
 # Select the file or directory via fzf
 cmd fzf-select ${{
   IFS=' '
@@ -106,7 +80,6 @@ cmd fzf-cd ${{
 
 # ========== Mappings ==========
 
-map <space>
 map <tab> :toggle;down
 map y
 map yy copy
@@ -117,7 +90,9 @@ map d
 map dD delete
 map dd cut
 map dT trash
+map <space>
 map <space>f fzf-select
+map <space>gg :lazygit
 # map <c-j> fzf-cd
 map M push :mkdir<space>
 map V push :!lvim<space>
@@ -126,6 +101,10 @@ map ] push hjl
 map A rename # at the very end
 map I push A<c-a> # at the very beginning
 map r push A<c-u> # new rename
+map x $$f
+map X !$f
+map o &mimeopen $f
+map O $mimeopen --ask $f
 map ec push :zip<space>
 map ex extract
 
