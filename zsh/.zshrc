@@ -126,11 +126,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 # ------------------------------
 
 # >SEE
-source ~/.config/zsh/tmux.zsh 
 source ~/.config/zsh/env.zsh
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/vi.zsh
-source ~/.config/zsh/fzf.zsh
 
 autopair-init
 source ~/.zim/modules/fzf-tab/fzf-tab.plugin.zsh
