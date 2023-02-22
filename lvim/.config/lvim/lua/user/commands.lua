@@ -3,7 +3,11 @@ vim.cmd([[
     exec "w"
     if &filetype == 'c'
       exec "!g++ % -o %<"
-      exec "!time ./%<"
+      :vsp
+      :term ./%<
+      :wincmd h
+      :!rm -f ./%<
+      :wincmd l
     elseif &filetype == 'cpp'
       exec "!g++ -std=c++11 % -Wall -o %<"
       :vsp
@@ -23,7 +27,7 @@ vim.cmd([[
       :!time bash %
     elseif &filetype == 'python'
       set splitbelow
-      :sp
+      :vsp
       :term python3 %
     elseif &filetype == 'html'
       silent! exec "!".g:mkdp_browser." % &"
