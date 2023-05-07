@@ -9,9 +9,19 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export PATH=$PATH:$HOME/.cargo/bin
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
-
-export http_proxy=http://192.168.1.14:7890
-export https_proxy=http://192.168.1.14:7890
+# 轻舟
+export http_proxy=http://10.4.1.224:7890
+export https_proxy=http://10.4.1.224:7890
+# 寝室
+# export http_proxy=http://192.168.0.199:7890
+# export https_proxy=http://192.168.0.199:7890
+# 图书馆
+# export http_proxy=http://172.19.253.77:7890
+# export https_proxy=http://172.19.253.77:7890
+# export http_proxy=http://172.19.186.36:7890
+# export https_proxy=http://172.19.186.36:7890
+# export http_proxy=http://172.19.242.147:7890
+# export https_proxy=http://172.19.242.147:7890
 
 export LF_ICONS="\
 tw=:\
