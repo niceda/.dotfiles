@@ -18,10 +18,6 @@ export https_proxy=http://10.4.1.224:7890
 # 图书馆
 # export http_proxy=http://172.19.253.77:7890
 # export https_proxy=http://172.19.253.77:7890
-# export http_proxy=http://172.19.186.36:7890
-# export https_proxy=http://172.19.186.36:7890
-# export http_proxy=http://172.19.242.147:7890
-# export https_proxy=http://172.19.242.147:7890
 
 export LF_ICONS="\
 tw=:\
