@@ -2,7 +2,6 @@ require("user.plugins")
 require("user.keymappings")
 require("user.commands")
 require("user.settings")
-lvim.lsp.diagnostics.virtual_text = false
 
 --
 -----------------------------------------------------------------
