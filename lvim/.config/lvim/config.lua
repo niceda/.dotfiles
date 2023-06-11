@@ -2,6 +2,7 @@ require("user.plugins")
 require("user.keymappings")
 require("user.commands")
 require("user.settings")
+require("user.lsp")
 
 --
 -----------------------------------------------------------------
