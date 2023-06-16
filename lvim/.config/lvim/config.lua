@@ -3,6 +3,7 @@ require("user.keymappings")
 require("user.commands")
 require("user.settings")
 require("user.lsp")
+lvim.builtin.autopairs.disable_filetype = { "TelescopePrompt", "ps1", "sh" }
 
 --
 -----------------------------------------------------------------
