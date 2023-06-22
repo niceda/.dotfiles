@@ -31,3 +31,13 @@ lvim.keys = {
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["h"] = nil
 lvim.builtin.which_key.mappings["<CR>"] = { "<cmd>nohlsearch<CR>", "No Highlight" }
+lvim.builtin.which_key.mappings["a"] = {
+  name = "A.I.",
+  -- c = { "<cmd>ChatGPT<cr>", "ChatGPT" },
+  -- a = { "<cmd>ChatGPTActAs<cr>", "Act As GPT" },
+  -- e = { "<cmd>ChatGPTEditWithInstructions<cr>", "Edit GPT" },
+  r = { "<cmd>ChatRunCustomCodeAction<cr>", "Code Action GPT" },
+  s = { "<cmd>Copilot suggestion<cr>", "Toggle Copilot Suggestion" },
+  p = { "<cmd>Copilot panel<cr>", "Toggle Copilot Panel" },
+  t = { "<cmd>Copilot toggle<cr>", "Toggle Copilot" },
+}

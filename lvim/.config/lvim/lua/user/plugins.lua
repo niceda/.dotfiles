@@ -64,6 +64,44 @@ lvim.plugins = {
 				require("copilot").setup() -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
 				require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
 			end, 100)
+
+			local ok, copilot = pcall(require, "copilot")
+			if not ok then
+				return
+			end
+
+			copilot.setup({
+				panel = {
+					keymap = {
+						jump_next = "<c-j>",
+						jump_prev = "<c-k>",
+						accept = "<c-l>",
+						refresh = "r",
+						open = "<M-CR>",
+					},
+				},
+				suggestion = {
+					enabled = true,
+					auto_trigger = true,
+					keymap = {
+						accept = "<c-l>",
+						next = "<c-j>",
+						prev = "<c-k>",
+						dismiss = "<c-h>",
+					},
+				},
+				filetypes = {
+					yaml = false,
+					markdown = true,
+					help = false,
+					gitcommit = false,
+					gitrebase = false,
+					hgcommit = false,
+					svn = false,
+					cvs = false,
+					["."] = false,
+				},
+			})
 		end,
 	},
 	{ "p00f/clangd_extensions.nvim" },
@@ -118,4 +156,6 @@ lvim.plugins = {
 	-- 		})
 	-- 	end,
 	-- },
+	-- "MunifTanjim/nui.nvim",
+	-- "jackMort/ChatGPT.nvim",
 }
