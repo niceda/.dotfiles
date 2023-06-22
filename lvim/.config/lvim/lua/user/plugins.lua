@@ -55,17 +55,17 @@ lvim.plugins = {
 		end,
 	},
 	{ "p00f/nvim-ts-rainbow" },
-	-- {
-	-- 	"zbirenbaum/copilot-cmp",
-	-- 	event = "InsertEnter",
-	-- 	dependencies = { "zbirenbaum/copilot.lua" },
-	-- 	config = function()
-	-- 		vim.defer_fn(function()
-	-- 			require("copilot").setup() -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
-	-- 			require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
-	-- 		end, 100)
-	-- 	end,
-	-- },
+	{
+		"zbirenbaum/copilot-cmp",
+		event = "InsertEnter",
+		dependencies = { "zbirenbaum/copilot.lua" },
+		config = function()
+			vim.defer_fn(function()
+				require("copilot").setup() -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+				require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
+			end, 100)
+		end,
+	},
 	{ "p00f/clangd_extensions.nvim" },
 	-- {
 	-- 	"Civitasv/cmake-tools.nvim",
