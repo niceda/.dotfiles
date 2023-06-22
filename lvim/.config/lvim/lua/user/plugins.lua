@@ -158,4 +158,7 @@ lvim.plugins = {
 	-- },
 	-- "MunifTanjim/nui.nvim",
 	-- "jackMort/ChatGPT.nvim",
+  { url = "git@github.com:LunarVim/primer.nvim.git" },
+  { url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
+  "Mofiqul/vscode.nvim",
 }
