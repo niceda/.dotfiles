@@ -1,0 +1,67 @@
+""" Settings  --------------------------------
+let mapleader=" "
+set hlsearch
+set wrap
+set incsearch
+set number
+set noshowmode
+set ttimeoutlen=0
+set notimeout
+set clipboard=unnamed
+set clipboard+=ideaput
+set ignorecase smartcase
+set scrolloff=8
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Plugins  --------------------------------
+set surround
+set commentary
+set argtextobj
+set textobj-entire
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Mappings --------------------------------
+" base
+nnoremap Y y$
+nnoremap gl <ESC>:action ShowErrorDescription<CR>
+nnoremap gI :action GotoImplementation<cr>
+nnoremap gr :action FindUsages<cr>
+nnoremap <leader>q :action CloseContent<cr>
+nnoremap <leader><CR> :nohlsearch<cr>
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+
+" Lsp
+nnoremap <leader>lr :action RenameElement<CR>
+nnoremap <leader>lf :action ReformatCode<CR>
+nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
+nnoremap <leader>lk :action GotoPreviousError<CR>
+nnoremap <leader>lj :action GotoNextError<CR>
+nnoremap <leader>lg :action Generate<CR>
+nnoremap <leader>la :action ShowIntentionActions<CR>
+nnoremap <leader>lc :action GotoClass<CR>
+nnoremap <leader>ls :action GotoSymbol<CR>
+nnoremap <leader>lo :action FileStructurePopup
+
+" Debug
+nnoremap <leader>ds :action Debug<cr>
+nnoremap <leader>di :action SmartStepInto<CR>
+nnoremap <leader>dv :action ViewBreakpoints<CR>
+nnoremap <leader>dt :action ToggleLineBreakpoint<CR>
+nnoremap <leader>do :action StepOver<CR>
+
+" Search && Replace
+nnoremap <leader>P :action ManageRecentProjects<CR>
+nnoremap <Leader>sf <ESC>:action GotoFile<CR>
+nnoremap <leader>st :action FindInPath<CR>
+nnoremap <leader>sc :action GotoAction<cr>
+nnoremap <leader>rf :action ReplaceInPath<CR>
+
+" Other
+nnoremap <leader>be :action CloseAllEditorsButActive<CR>
+nnoremap <leader>E :action Switcher<cr>
