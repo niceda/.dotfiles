@@ -55,15 +55,10 @@ lvim.plugins = {
 		end,
 	},
 	{
-		"zbirenbaum/copilot-cmp",
+		"zbirenbaum/copilot.lua", -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+		cmd = "Copilot",
 		event = "InsertEnter",
-		dependencies = { "zbirenbaum/copilot.lua" },
 		config = function()
-			vim.defer_fn(function()
-				require("copilot").setup() -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
-				require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
-			end, 100)
-
 			local ok, copilot = pcall(require, "copilot")
 			if not ok then
 				return
@@ -83,8 +78,8 @@ lvim.plugins = {
 					enabled = true,
 					auto_trigger = true,
 					keymap = {
-						-- accept = "<c-l>",
-						accept = "<Tab>",
+						accept = "<c-l>",
+						-- accept = "<Tab>",
 						next = "<c-j>",
 						prev = "<c-k>",
 						dismiss = "<c-h>",
@@ -102,6 +97,13 @@ lvim.plugins = {
 					["."] = false,
 				},
 			})
+		end,
+	},
+	{
+		"zbirenbaum/copilot-cmp", -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
 		end,
 	},
 	{ "p00f/clangd_extensions.nvim" },
