@@ -54,7 +54,6 @@ lvim.plugins = {
 			})
 		end,
 	},
-	{ "p00f/nvim-ts-rainbow" },
 	{
 		"zbirenbaum/copilot-cmp",
 		event = "InsertEnter",
@@ -84,7 +83,8 @@ lvim.plugins = {
 					enabled = true,
 					auto_trigger = true,
 					keymap = {
-						accept = "<c-l>",
+						-- accept = "<c-l>",
+						accept = "<Tab>",
 						next = "<c-j>",
 						prev = "<c-k>",
 						dismiss = "<c-h>",
@@ -158,7 +158,8 @@ lvim.plugins = {
 	-- },
 	-- "MunifTanjim/nui.nvim",
 	-- "jackMort/ChatGPT.nvim",
-  { url = "git@github.com:LunarVim/primer.nvim.git" },
-  { url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
-  "Mofiqul/vscode.nvim",
+	{ url = "git@github.com:LunarVim/primer.nvim.git" },
+	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
+	"Mofiqul/vscode.nvim",
+	"HiPhish/nvim-ts-rainbow2",
 }
