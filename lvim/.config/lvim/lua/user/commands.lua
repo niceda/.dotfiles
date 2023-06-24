@@ -9,7 +9,7 @@ vim.cmd([[
       :!rm -f ./%<
       :wincmd l
     elseif &filetype == 'cpp'
-      exec "!g++ -std=c++11 % -Wall -o %<"
+      exec "!clang++ -std=c++17 % -Wall -o %<"
       :vsp
       :term ./%<
       :wincmd h
