@@ -11,3 +11,5 @@
 #   DeducedTypes: Yes
 CompileFlags:                     # Tweak the parse settings
   Add: [-Wall, -std=c++17] # treat all files as C++, enable more warnings
+  # 不加Compiler选项打开c文件会报c不支持-std=c++17
+  Compiler: clang++               # Change argv[0] of compile flags to `clang++`
