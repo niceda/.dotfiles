@@ -27,6 +27,12 @@ lvim.keys = {
 		-- ["p"] = '"_dP',
 	},
 }
+
+local opts = { noremap = true, silent = true }
+-- For the description on keymaps, I have a function getOptions(desc) which returns noremap=true, silent=true and desc=desc. Then call: keymap(mode, keymap, command, getOptions("some randome desc")
+local keymap = vim.keymap.set
+keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
+
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["h"] = nil
