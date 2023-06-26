@@ -21,6 +21,11 @@ lvim.keys = {
 		["<leader>r"] = ":call CompileRunGcc()<CR>",
 		["]d"] = "<cmd>lua vim.diagnostic.goto_next()<cr>",
 		["[d"] = "<cmd>lua vim.diagnostic.goto_prev()<cr>",
+    -- 改变 goto "{" "}" 的位置
+    ["[["] = "?{<CR>w99[{",
+    ["]["] = "/}<CR>b99]}",
+    ["]]"] = "j0[[%/{<CR>",
+    ["[]"] = "k$][%?}<CR>",
 	},
 
 	visual_mode = {
