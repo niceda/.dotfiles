@@ -35,6 +35,8 @@ keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
 
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+-- lvim.builtin.which_key.mappings["q"] = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" }
+lvim.builtin.which_key.mappings["q"] = { '<cmd>confirm qa<CR>', "Quit" }
 lvim.builtin.which_key.mappings["h"] = nil
 lvim.builtin.which_key.mappings["<CR>"] = { "<cmd>nohlsearch<CR>", "No Highlight" }
 lvim.builtin.which_key.mappings["a"] = {
