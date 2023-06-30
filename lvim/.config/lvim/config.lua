@@ -3,6 +3,7 @@ require("user.keymappings")
 require("user.functions")
 require("user.settings")
 require("user.lsp")
+require("user.autocommands")
 lvim.builtin.autopairs.disable_filetype = { "TelescopePrompt", "ps1", "sh" }
 
 --
