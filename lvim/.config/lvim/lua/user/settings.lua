@@ -31,6 +31,9 @@ if vim.fn.has("wsl") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win64") == 
 end
 
 lvim.builtin.telescope.defaults.file_ignore_patterns = {
+  "doc",
+  "%-build-%/",
+  "%.in",
   ".git/",
   "target/",
   "docs/",
