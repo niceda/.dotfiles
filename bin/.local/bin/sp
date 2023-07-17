@@ -1,0 +1,8 @@
+#!/usr/bin/expect
+
+set port [lindex $argv 0 ]
+set timeout 10
+spawn ssh -p $port root@127.0.0.1
+expect "password*"
+send "root@skiff123\r"
+interact
