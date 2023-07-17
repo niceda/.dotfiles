@@ -1,0 +1,9 @@
+#!/usr/bin/expect
+
+# set timeout 10
+set file_path "/home/fida/.config/password/rd"
+set content [exec cat $file_path]
+spawn ssh -l rd zjk-rd.skiffenergy.com
+expect "password*"
+send "$content\r"
+interact
