@@ -512,17 +512,17 @@ lvim.plugins = {
 				lsp_blacklist = {},
 				symbol_blacklist = {},
 				symbols = {
-					File = { icon = "", hl = "@text.uri" },
-					Module = { icon = "", hl = "@namespace" },
-					Namespace = { icon = "", hl = "@namespace" },
-					Package = { icon = "", hl = "@namespace" },
-					Class = { icon = "𝓒", hl = "@type" },
+					File = { icon = "󰈚", hl = "@text.uri" },
+					Module = { icon = "", hl = "@namespace" },
+					Namespace = { icon = "󰌗", hl = "@namespace" },
+					Package = { icon = "", hl = "@namespace" },
+					Class = { icon = "󰠱", hl = "@type" },
 					Method = { icon = "ƒ", hl = "@method" },
 					Property = { icon = "", hl = "@method" },
-					Field = { icon = "", hl = "@field" },
-					Constructor = { icon = "", hl = "@constructor" },
+					Field = { icon = "󰜢", hl = "@field" },
+					Constructor = { icon = "", hl = "@constructor" },
 					Enum = { icon = "ℰ", hl = "@type" },
-					Interface = { icon = "ﰮ", hl = "@type" },
+					Interface = { icon = " ", hl = "@type" },
 					Function = { icon = "", hl = "@function" },
 					Variable = { icon = "", hl = "@constant" },
 					Constant = { icon = "", hl = "@constant" },
@@ -534,9 +534,9 @@ lvim.plugins = {
 					Key = { icon = "🔐", hl = "@type" },
 					Null = { icon = "NULL", hl = "@type" },
 					EnumMember = { icon = "", hl = "@field" },
-					Struct = { icon = "𝓢", hl = "@type" },
-					Event = { icon = "🗲", hl = "@type" },
-					Operator = { icon = "+", hl = "@operator" },
+					Struct = { icon = "󰙅", hl = "@type" },
+					Event = { icon = "", hl = "@type" },
+					Operator = { icon = "󰆕", hl = "@operator" },
 					TypeParameter = { icon = "𝙏", hl = "@parameter" },
 					Component = { icon = "", hl = "@function" },
 					Fragment = { icon = "", hl = "@constant" },
@@ -546,4 +546,31 @@ lvim.plugins = {
 		end,
 	},
 	"lunarvim/darkplus.nvim",
+	{
+		"tomasky/bookmarks.nvim",
+		event = "VimEnter",
+		config = function()
+			require("bookmarks").setup({
+				-- sign_priority = 8,  --set bookmark sign priority to cover other sign
+				save_file = vim.fn.expand("$HOME/.bookmarks"), -- bookmarks save file path
+				keywords = {
+					["@t"] = "☑️ ", -- mark annotation startswith @t ,signs this icon as `Todo`
+					["@w"] = "⚠️ ", -- mark annotation startswith @w ,signs this icon as `Warn`
+					["@f"] = "⛏ ", -- mark annotation startswith @f ,signs this icon as `Fix`
+					["@n"] = " ", -- mark annotation startswith @n ,signs this icon as `Note`
+				},
+				on_attach = function(bufnr)
+					local bm = require("bookmarks")
+					local map = vim.keymap.set
+					map("n", "mm", bm.bookmark_toggle) -- add or remove bookmark at current line
+					map("n", "mi", bm.bookmark_ann) -- add or edit mark annotation at current line
+					map("n", "mc", bm.bookmark_clean) -- clean all marks in local buffer
+					map("n", "mn", bm.bookmark_next) -- jump to next mark in local buffer
+					map("n", "mp", bm.bookmark_prev) -- jump to previous mark in local buffer
+					map("n", "ml", bm.bookmark_list) -- show marked file list in quickfix window
+				end,
+			})
+			require("telescope").load_extension("bookmarks")
+		end,
+	},
 }
