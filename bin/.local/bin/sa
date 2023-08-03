@@ -1,0 +1,20 @@
+#!/usr/bin/expect
+
+# set timeout 10
+set file_path "/home/fida/.config/password/aliyun"
+set content [exec cat $file_path]
+spawn ssh root@8.130.14.65
+expect {
+        "password" {send "$content\r"}
+        "yes/no" {send "yes\r";exp_continue}
+}
+interact
+# send "p\r"
+
+#在远程主机创建一个用户
+    # send "cd /usr\r"
+    # send "echo -e '${password}\n${password}\n\n\n\n\n\nY\n' | adduser ${username}\r"
+    # send "exit\r"
+    # send "p\r"
+    # expect eof
+# interact

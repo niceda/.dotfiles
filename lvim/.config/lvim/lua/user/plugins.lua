@@ -54,51 +54,51 @@ lvim.plugins = {
 			})
 		end,
 	},
-	{
-		"zbirenbaum/copilot.lua", -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			local ok, copilot = pcall(require, "copilot")
-			if not ok then
-				return
-			end
+	-- {
+	-- 	"zbirenbaum/copilot.lua", -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+	-- 	cmd = "Copilot",
+	-- 	event = "InsertEnter",
+	-- 	config = function()
+	-- 		local ok, copilot = pcall(require, "copilot")
+	-- 		if not ok then
+	-- 			return
+	-- 		end
 
-			copilot.setup({
-				panel = {
-					keymap = {
-						jump_next = "<c-j>",
-						jump_prev = "<c-k>",
-						accept = "<c-l>",
-						refresh = "r",
-						open = "<M-CR>",
-					},
-				},
-				suggestion = {
-					enabled = true,
-					auto_trigger = true,
-					keymap = {
-						accept = "<c-l>",
-						-- accept = "<Tab>",
-						next = "<c-j>",
-						prev = "<c-k>",
-						dismiss = "<c-h>",
-					},
-				},
-				filetypes = {
-					yaml = false,
-					markdown = true,
-					help = false,
-					gitcommit = false,
-					gitrebase = false,
-					hgcommit = false,
-					svn = false,
-					cvs = false,
-					["."] = false,
-				},
-			})
-		end,
-	},
+	-- 		copilot.setup({
+	-- 			panel = {
+	-- 				keymap = {
+	-- 					jump_next = "<c-j>",
+	-- 					jump_prev = "<c-k>",
+	-- 					accept = "<c-l>",
+	-- 					refresh = "r",
+	-- 					open = "<M-CR>",
+	-- 				},
+	-- 			},
+	-- 			suggestion = {
+	-- 				enabled = true,
+	-- 				auto_trigger = true,
+	-- 				keymap = {
+	-- 					accept = "<c-l>",
+	-- 					-- accept = "<Tab>",
+	-- 					next = "<c-j>",
+	-- 					prev = "<c-k>",
+	-- 					dismiss = "<c-h>",
+	-- 				},
+	-- 			},
+	-- 			filetypes = {
+	-- 				yaml = false,
+	-- 				markdown = true,
+	-- 				help = false,
+	-- 				gitcommit = false,
+	-- 				gitrebase = false,
+	-- 				hgcommit = false,
+	-- 				svn = false,
+	-- 				cvs = false,
+	-- 				["."] = false,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"zbirenbaum/copilot-cmp", -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
 		after = { "copilot.lua" },
@@ -529,7 +529,7 @@ lvim.plugins = {
 					String = { icon = "𝓐", hl = "@string" },
 					Number = { icon = "#", hl = "@number" },
 					Boolean = { icon = "⊨", hl = "@boolean" },
-					Array = { icon = "", hl = "@constant" },
+					Array = { icon = "[]", hl = "@constant" },
 					Object = { icon = "⦿", hl = "@type" },
 					Key = { icon = "🔐", hl = "@type" },
 					Null = { icon = "NULL", hl = "@type" },
