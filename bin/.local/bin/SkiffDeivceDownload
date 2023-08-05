@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -L -C - -o device.gz https://release.skiffenergy.com/pkg/device-debug.gz
