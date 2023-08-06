@@ -9,12 +9,3 @@ expect {
         "yes/no" {send "yes\r";exp_continue}
 }
 interact
-# send "p\r"
-
-#在远程主机创建一个用户
-    # send "cd /usr\r"
-    # send "echo -e '${password}\n${password}\n\n\n\n\n\nY\n' | adduser ${username}\r"
-    # send "exit\r"
-    # send "p\r"
-    # expect eof
-# interact
