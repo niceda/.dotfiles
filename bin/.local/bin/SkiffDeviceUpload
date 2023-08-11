@@ -3,7 +3,7 @@
 set file_path "/home/fida/.config/password/skiff"
 set passwd [exec cat $file_path]
 
-cd ~/QZ/repo/build-debian/app/device/
+cd ~/QZ/repo/cmake-build-debug/app/device/
 strip -x -w --keep-file-symbols device
 gzip device
 curl -v --user 'xiongdajun:$passwd' --upload-file "device.gz" https://repo-inf.skiffenergy.com/repository/bin-release/pkg/device-debug.gz

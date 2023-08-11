@@ -62,3 +62,8 @@ local opts = {
 }
 
 require("lvim.lsp.manager").setup("clangd", opts)
+
+-- local linters = require "lvim.lsp.null-ls.linters"
+-- linters.setup {
+--   { command = "cpplint", filetypes = { "cpp" } },
+-- }

@@ -28,7 +28,7 @@ nnoremap Y y$
 nnoremap gl <ESC>:action ShowErrorDescription<CR>
 nnoremap gI :action GotoImplementation<cr>
 nnoremap gr :action FindUsages<cr>
-nnoremap <leader>q :action CloseContent<cr>
+nnoremap <leader>c :action CloseContent<cr>
 nnoremap <leader><CR> :nohlsearch<cr>
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
@@ -46,7 +46,7 @@ nnoremap <leader>lg :action Generate<CR>
 nnoremap <leader>la :action ShowIntentionActions<CR>
 nnoremap <leader>lc :action GotoClass<CR>
 nnoremap <leader>ls :action GotoSymbol<CR>
-nnoremap <leader>lo :action FileStructurePopup
+nnoremap <leader>lo :action FileStructurePopup<CR>
 
 " Debug
 nnoremap <leader>ds :action Debug<cr>

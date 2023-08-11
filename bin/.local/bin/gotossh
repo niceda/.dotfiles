@@ -500,7 +500,7 @@ if [ "${PWD}" != "-"  ]; then
 		"*yes/no" { send "yes\r"; exp_continue }
 		"*password*" { send "'${PWD}'\r" }
 		}' >> ${TMP_FILE}
-    echo 'expect "*:~*"' >> ${TMP_FILE}
+    # echo 'expect "*:~*"' >> ${TMP_FILE}
     if [ -n "${COMMAND}" ]; then
         echo 'send  "'${COMMAND}'\r"' >> ${TMP_FILE}
     fi
