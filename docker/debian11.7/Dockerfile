@@ -5,8 +5,8 @@ ARG user=fida
 RUN sed -i s/deb.debian.org/mirrors.aliyun.com/g /etc/apt/sources.list && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 
 RUN apt update \
-    && apt -y --no-install-recommends install gcc g++ cmake git curl openjdk-11-jdk ssh vim build-essential gosu sudo gdb gdbserver locales clang-format clangd man net-tools iproute2\
-    && rm -rf /var/lib/apt/lists/*
+    && apt -y --no-install-recommends install gcc g++ cmake git curl openjdk-11-jdk ssh vim build-essential gosu sudo gdb gdbserver locales clang-format clangd man net-tools iproute2 wget locate libssl-dev
+    # && rm -rf /var/lib/apt/lists/*
 
 RUN useradd --create-home --no-log-init --shell /bin/bash ${user} \
     && adduser ${user} sudo \
