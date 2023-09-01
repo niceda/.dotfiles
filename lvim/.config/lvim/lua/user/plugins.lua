@@ -610,4 +610,6 @@ lvim.plugins = {
 			})
 		end,
 	},
+  "olexsmir/gopher.nvim",
+  "leoluz/nvim-dap-go",
 }

@@ -21,7 +21,7 @@ lvim.keys = {
 		["<leader>r"] = ":call CompileRunGcc()<CR>",
 		["]d"] = "<cmd>lua vim.diagnostic.goto_next()<cr>",
 		["[d"] = "<cmd>lua vim.diagnostic.goto_prev()<cr>",
-    ["<C-g>"] = "<cmd>lua require 'lvim.core.terminal'.lazygit_toggle()<cr>",
+		["<C-g>"] = "<cmd>lua require 'lvim.core.terminal'.lazygit_toggle()<cr>",
 	},
 
 	visual_mode = {

@@ -7,4 +7,3 @@
 --   pattern = { "*.cpp", "*.h" },
 --   command = "SymbolsOutline",
 -- })
-
