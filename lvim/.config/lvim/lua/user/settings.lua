@@ -90,3 +90,11 @@ lvim.builtin.telescope.pickers.buffers = {
 	-- previewer = false,
 	initial_mode = "insert",
 }
+
+local options = {
+  smartindent = true, -- make indenting smarter again
+}
+
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
