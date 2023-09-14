@@ -439,7 +439,7 @@ lvim.plugins = {
 						set_jumps = true, -- whether to set jumps in the jumplist
 						goto_next_start = {
 							["]f"] = "@function.outer",
-							-- ["]]"] = { query = "@class.outer", desc = "Next class start" },
+							["]]"] = { query = "@class.outer", desc = "Next class start" },
 							--
 							-- You can use regex matching (i.e. lua pattern) and/or pass a list in a "query" key to group multiple queires.
 							-- ["]o"] = "@loop.*",
@@ -452,15 +452,15 @@ lvim.plugins = {
 						},
 						goto_next_end = {
 							["]F"] = "@function.outer",
-							-- ["]["] = "@class.outer",
+							["]["] = "@class.outer",
 						},
 						goto_previous_start = {
 							["[f"] = "@function.outer",
-							-- ["[["] = "@class.outer",
+							["[["] = "@class.outer",
 						},
 						goto_previous_end = {
 							["[F"] = "@function.outer",
-							-- ["[]"] = "@class.outer",
+							["[]"] = "@class.outer",
 						},
 						-- Below will go to either the start or the end, whichever is closer.
 						-- Use if you want more granular movements
