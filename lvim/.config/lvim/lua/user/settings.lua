@@ -98,3 +98,6 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+lvim.builtin.bufferline.active = false
+lvim.builtin.breadcrumbs.active = true

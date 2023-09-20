@@ -34,8 +34,12 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
 
+lvim.builtin.which_key.mappings[";"] = nil
+lvim.builtin.which_key.mappings["L"] = nil
+
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["b"] = { "<cmd>Telescope buffers<cr>", "Buffers" }
 -- lvim.builtin.which_key.mappings["q"] = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" }
 lvim.builtin.which_key.mappings["h"] = nil
 lvim.builtin.which_key.mappings["<CR>"] = { "<cmd>nohlsearch<CR>", "No Highlight" }

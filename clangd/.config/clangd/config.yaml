@@ -1,5 +1,5 @@
 If:
   PathExclude: [.*\.c, .*\.proto]
 CompileFlags:
-  Add: [-std=c++17]
+  # Add: [-std=c++17]
   Compiler: clang++
