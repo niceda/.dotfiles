@@ -259,7 +259,8 @@ lvim.plugins = {
 	{ url = "git@github.com:LunarVim/primer.nvim.git" },
 	{ url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
 	"Mofiqul/vscode.nvim",
-	"HiPhish/nvim-ts-rainbow2",
+	-- "HiPhish/nvim-ts-rainbow2",
+	"HiPhish/rainbow-delimiters.nvim",
 	-- {
 	-- 	"lvimuser/lsp-inlayhints.nvim",
 	-- 	config = function()
@@ -832,4 +833,6 @@ lvim.plugins = {
 		end,
 	},
 	"sindrets/diffview.nvim",
+	-- "MTDL9/vim-log-highlighting",
+  "AckslD/swenv.nvim",
 }
