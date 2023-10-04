@@ -11,6 +11,8 @@ export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/.zsh_history"
 export GOPATH="$HOME/go"
 export PATH=$PATH:$GOPATH/bin
 
+export PATH=~/.npm-global/bin:$PATH
+
 export ZFM_NO_BINDINGS=1
 
 # 轻舟

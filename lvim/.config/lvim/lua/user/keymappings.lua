@@ -54,5 +54,4 @@ lvim.builtin.which_key.mappings["a"] = {
 	t = { "<cmd>Copilot toggle<cr>", "Toggle Copilot" },
 }
 lvim.builtin.which_key.mappings["l"].o = { "<cmd>SymbolsOutline<cr>", "Outline" }
-
 lvim.builtin.which_key.mappings["g"].g = { "<cmd>Neogit<cr>", "Neogit" }

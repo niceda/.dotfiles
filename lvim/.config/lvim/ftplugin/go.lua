@@ -49,6 +49,7 @@ lsp_manager.setup("gopls", {
 			completeUnimported = true,
 			staticcheck = true,
 			matcher = "Fuzzy",
+			deepCompletion = true,
 			usePlaceholders = true, -- enables placeholders for function parameters or struct fields in completion responses
 			analyses = {
 				fieldalignment = true, -- find structs that would use less memory if their fields were sorted

@@ -27,3 +27,6 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
 fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
+
+# nvm
+source /usr/share/nvm/init-nvm.sh
