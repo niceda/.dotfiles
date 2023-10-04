@@ -8,7 +8,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/.zsh_history"
 
-export GOPATH=$HOEM/go
+export GOPATH="$HOME/go"
 export PATH=$PATH:$HOME/go/bin
 
 export ZFM_NO_BINDINGS=1
