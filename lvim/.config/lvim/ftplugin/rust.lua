@@ -29,6 +29,7 @@ local mappings = {
     },
     o = { "<cmd>RustOpenExternalDocs<Cr>", "Open External Docs" },
   },
+  r = { "<cmd>RustRunnables<Cr>", "Runnables" },
 }
 
 which_key.register(mappings, opts)
