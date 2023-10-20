@@ -1,11 +1,24 @@
 lvim.plugins = {
 	{
-		"tpope/vim-surround",
-		-- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
-		-- setup = function()
-		--  vim.o.timeoutlen = 500
-		-- vim.g.surround_no_insert_mappings = true
-		-- end
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+				keymaps = { -- vim-surround style keymaps
+					insert = "<C-g>s",
+					insert_line = "<C-g>S",
+					normal = "s",
+					normal_cur = "ss",
+					normal_line = "S",
+					normal_cur_line = "SS",
+					visual = "s",
+					visual_line = "gS",
+					delete = "ds",
+					change = "cs",
+				},
+			})
+		end,
 	},
 	-- {
 	-- 	"ray-x/lsp_signature.nvim",
@@ -1075,6 +1088,36 @@ lvim.plugins = {
 					},
 				}
 			end
+		end,
+	},
+	{
+		"nacro90/numb.nvim",
+		config = function()
+			require("numb").setup({
+				show_numbers = true, -- Enable 'number' for the window while peeking
+				show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+				hide_relativenumbers = true, -- Enable turning off 'relativenumber' for the window while peeking
+				number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
+				centered_peeking = true, -- Peeked line will be centered relative to window
+			})
+		end,
+	},
+	-- "windwp/nvim-spectre",
+	{
+		"andymass/vim-matchup",
+		config = function()
+			-- vim.g.matchup_enabled = 0
+			vim.g.matchup_matchparen_offscreen = { method = nil }
+			vim.g.matchup_matchpref = { html = { nolists = 1 } }
+			lvim.builtin.treesitter.matchup.enable = { "astro" }
+			lvim.builtin.treesitter.matchup.disable = { "lua" }
+			vim.cmd([[
+augroup matchup_matchparen_disable_ft
+  autocmd!
+  autocmd FileType lua let [b:matchup_matchparen_fallback,
+      \ b:matchup_matchparen_enabled] = [0, 0]
+augroup END
+]])
 		end,
 	},
 }

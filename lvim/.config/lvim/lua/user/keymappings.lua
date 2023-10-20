@@ -35,7 +35,7 @@ local keymap = vim.keymap.set
 keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
 
 lvim.builtin.which_key.mappings[";"] = nil
-lvim.builtin.which_key.mappings["L"] = nil
+-- lvim.builtin.which_key.mappings["L"] = nil
 
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
