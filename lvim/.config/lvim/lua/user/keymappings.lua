@@ -35,6 +35,7 @@ local keymap = vim.keymap.set
 keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
 
 lvim.builtin.which_key.mappings[";"] = nil
+lvim.builtin.which_key.mappings["c"] = nil
 -- lvim.builtin.which_key.mappings["L"] = nil
 
 -- Use which-key to add extra bindings with the leader-key prefix
@@ -55,3 +56,20 @@ lvim.builtin.which_key.mappings["a"] = {
 }
 lvim.builtin.which_key.mappings["l"].o = { "<cmd>SymbolsOutline<cr>", "Outline" }
 lvim.builtin.which_key.mappings["g"].g = { "<cmd>Neogit<cr>", "Neogit" }
+lvim.builtin.which_key.mappings["\\"] = { "ggVGp<cr>", "Replace the entire text" }
+
+-- FIXME
+-- local function show_documentation()
+--     local filetype = vim.bo.filetype
+--     if vim.tbl_contains({ 'vim','help' }, filetype) then
+--         vim.cmd('h '..vim.fn.expand('<cword>'))
+--     elseif vim.tbl_contains({ 'man' }, filetype) then
+--         vim.cmd('Man '..vim.fn.expand('<cword>'))
+--     elseif vim.fn.expand('%:t') == 'Cargo.toml' and require('crates').popup_available() then
+--         require('crates').show_popup()
+--     else
+--         vim.lsp.buf.hover()
+--     end
+-- end
+
+-- vim.keymap.set('n', 'K', show_documentation, { silent = true })
