@@ -15,8 +15,10 @@ export PATH=~/.npm-global/bin:$PATH
 export ZFM_NO_BINDINGS=1
 
 # 轻舟
-# export http_proxy=http://10.4.1.38:7890
-# export https_proxy=http://10.4.1.38:7890
+export http_proxy=http://10.4.1.45:7890
+export https_proxy=http://10.4.1.45:7890
+# export all_proxy=socks5://10.4.1.45:7890
 # 家
 # export http_proxy=http://192.168.1.194:7890
 # export https_proxy=http://192.168.1.194:7890
+# export all_proxy=socks5://192.168.1.194:7890
