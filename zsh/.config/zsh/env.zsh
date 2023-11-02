@@ -14,6 +14,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=~/.npm-global/bin:$PATH
 export ZFM_NO_BINDINGS=1
 
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+
 # 轻舟
 export http_proxy=http://10.4.1.45:7890
 export https_proxy=http://10.4.1.45:7890
