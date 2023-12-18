@@ -17,9 +17,15 @@ export ZFM_NO_BINDINGS=1
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 
+# Add this to your shell configuration file (e.g., ~/.bashrc or ~/.zshrc)
+refreshenv() {
+    source ~/.zshrc  # Replace with the path to your actual shell configuration file
+    echo "Environment variables refreshed!"
+}
+
 # 轻舟
-export http_proxy=http://10.4.1.45:7890
-export https_proxy=http://10.4.1.45:7890
+export http_proxy=http://10.4.1.42:7890
+export https_proxy=http://10.4.1.42:7890
 # export all_proxy=socks5://10.4.1.45:7890
 # 家
 # export http_proxy=http://192.168.1.194:7890

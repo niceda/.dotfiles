@@ -3,9 +3,9 @@ lvim.builtin.bufferline.active = false
 lvim.builtin.breadcrumbs.active = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 -- lvim.colorscheme = "lunar"
--- lvim.colorscheme = "primer_dark"
+lvim.colorscheme = "primer_dark"
 -- lvim.colorscheme = "onedark"
-lvim.colorscheme = "vscode"
+-- lvim.colorscheme = "vscode"
 -- lvim.colorscheme = "darkplus"
 
 -- Set a compatible clipboard manager

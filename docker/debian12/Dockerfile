@@ -9,7 +9,7 @@ RUN sed -i s/deb.debian.org/mirrors.aliyun.com/g /etc/apt/sources.list.d/debian.
 #     # && rm -rf /var/lib/apt/lists/*
 
 RUN apt update \
-    && apt -y --no-install-recommends install gcc g++ cmake git curl ssh vim build-essential gosu sudo gdb gdbserver locales clang-format clangd man net-tools iproute2 wget locate libssl-dev clang inetutils-ping
+    && apt -y --no-install-recommends install gcc g++ cmake git curl openjdk-11-jdk default-jdk ssh vim build-essential gosu sudo gdb gdbserver locales clang-format clangd man net-tools iproute2 wget locate libssl-dev clang inetutils-ping
     # && rm -rf /var/lib/apt/lists/*
 
 RUN useradd --create-home --no-log-init --shell /bin/bash ${user} \
