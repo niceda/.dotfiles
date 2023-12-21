@@ -2,6 +2,7 @@ lvim.log.level = "warn"
 lvim.builtin.bufferline.active = false
 lvim.builtin.breadcrumbs.active = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+-- lvim.builtin.treesitter.matchup.enable = true
 lvim.colorscheme = "lunar"
 -- lvim.colorscheme = "primer_dark"
 -- lvim.colorscheme = "onedark"

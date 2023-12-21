@@ -70,13 +70,13 @@ local config = {
 			configuration = {
 				updateBuildConfiguration = "interactive",
 				runtimes = {
+					-- {
+					-- 	name = "JavaSE-11",
+					-- 	path = "/usr/lib/jvm/java-11-openjdk/",
+					-- },
 					{
-						name = "JavaSE-11",
-						path = "~/.sdkman/candidates/java/11.0.17-tem",
-					},
-					{
-						name = "JavaSE-18",
-						path = "~/.sdkman/candidates/java/18.0.2-sem",
+						name = "JavaSE-17",
+						path = "/usr/lib/jvm/java-17-openjdk/",
 					},
 				},
 			},
@@ -126,10 +126,10 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	end,
 })
 
-local formatters = require("lvim.lsp.null-ls.formatters")
-formatters.setup({
-	{ command = "google_java_format", filetypes = { "java" } },
-})
+-- local formatters = require("lvim.lsp.null-ls.formatters")
+-- formatters.setup({
+-- 	{ command = "google_java_format", filetypes = { "java" } },
+-- })
 
 require("jdtls").start_or_attach(config)
 

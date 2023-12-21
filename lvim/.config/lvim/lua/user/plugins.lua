@@ -401,106 +401,107 @@ lvim.plugins = {
 			})
 		end,
 	},
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				textobjects = {
-					select = {
-						enable = true,
+	-- FIXME
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter-textobjects",
+	-- 	config = function()
+	-- 		require("nvim-treesitter.configs").setup({
+	-- 			textobjects = {
+	-- 				select = {
+	-- 					enable = true,
 
-						-- Automatically jump forward to textobj, similar to targets.vim
-						lookahead = true,
+	-- 					-- Automatically jump forward to textobj, similar to targets.vim
+	-- 					lookahead = true,
 
-						keymaps = {
-							-- You can use the capture groups defined in textobjects.scm
-							["af"] = "@function.outer",
-							["if"] = "@function.inner",
-							-- ["ac"] = "@class.outer",
-							["aa"] = "@parameter.outer",
-							["ia"] = "@parameter.inner",
-							-- You can optionally set descriptions to the mappings (used in the desc parameter of
-							-- nvim_buf_set_keymap) which plugins like which-key display
-							-- ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-							-- You can also use captures from other query groups like `locals.scm`
-							-- ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
-							["at"] = "@class.outer",
-							["it"] = "@class.inner",
-						},
-						-- You can choose the select mode (default is charwise 'v')
-						--
-						-- Can also be a function which gets passed a table with the keys
-						-- * query_string: eg '@function.inner'
-						-- * method: eg 'v' or 'o'
-						-- and should return the mode ('v', 'V', or '<c-v>') or a table
-						-- mapping query_strings to modes.
-						-- selection_modes = {
-						-- 	["@parameter.outer"] = "v", -- charwise
-						-- 	["@function.outer"] = "V", -- linewise
-						-- 	["@class.outer"] = "<c-v>", -- blockwise
-						-- },
-						-- If you set this to `true` (default is `false`) then any textobject is
-						-- extended to include preceding or succeeding whitespace. Succeeding
-						-- whitespace has priority in order to act similarly to eg the built-in
-						-- `ap`.
-						--
-						-- Can also be a function which gets passed a table with the keys
-						-- * query_string: eg '@function.inner'
-						-- * selection_mode: eg 'v'
-						-- and should return true of false
-						include_surrounding_whitespace = true,
-					},
-					-- swap = {
-					-- 	enable = false,
-					-- 	swap_next = {
-					-- 		["<leader>a"] = "@parameter.inner",
-					-- 	},
-					-- 	swap_previous = {
-					-- 		["<leader>A"] = "@parameter.inner",
-					-- 	},
-					-- },
-					move = {
-						enable = true,
-						set_jumps = true, -- whether to set jumps in the jumplist
-						goto_next_start = {
-							["]f"] = "@function.outer",
-							["]]"] = { query = "@class.outer", desc = "Next class start" },
-							--
-							-- You can use regex matching (i.e. lua pattern) and/or pass a list in a "query" key to group multiple queires.
-							-- ["]o"] = "@loop.*",
-							-- ["]o"] = { query = { "@loop.inner", "@loop.outer" } }
-							--
-							-- You can pass a query group to use query from `queries/<lang>/<query_group>.scm file in your runtime path.
-							-- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
-							-- ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
-							-- ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
-						},
-						goto_next_end = {
-							["]F"] = "@function.outer",
-							["]["] = "@class.outer",
-						},
-						goto_previous_start = {
-							["[f"] = "@function.outer",
-							["[["] = "@class.outer",
-						},
-						goto_previous_end = {
-							["[F"] = "@function.outer",
-							["[]"] = "@class.outer",
-						},
-						-- Below will go to either the start or the end, whichever is closer.
-						-- Use if you want more granular movements
-						-- Make it even more gradual by adding multiple queries and regex.
-						-- goto_next = {
-						-- 	["]d"] = "@conditional.outer",
-						-- },
-						-- goto_previous = {
-						-- 	["[d"] = "@conditional.outer",
-						-- },
-					},
-				},
-			})
-		end,
-	},
+	-- 					keymaps = {
+	-- 						-- You can use the capture groups defined in textobjects.scm
+	-- 						["af"] = "@function.outer",
+	-- 						["if"] = "@function.inner",
+	-- 						-- ["ac"] = "@class.outer",
+	-- 						["aa"] = "@parameter.outer",
+	-- 						["ia"] = "@parameter.inner",
+	-- 						-- You can optionally set descriptions to the mappings (used in the desc parameter of
+	-- 						-- nvim_buf_set_keymap) which plugins like which-key display
+	-- 						-- ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+	-- 						-- You can also use captures from other query groups like `locals.scm`
+	-- 						-- ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
+	-- 						["at"] = "@class.outer",
+	-- 						["it"] = "@class.inner",
+	-- 					},
+	-- 					-- You can choose the select mode (default is charwise 'v')
+	-- 					--
+	-- 					-- Can also be a function which gets passed a table with the keys
+	-- 					-- * query_string: eg '@function.inner'
+	-- 					-- * method: eg 'v' or 'o'
+	-- 					-- and should return the mode ('v', 'V', or '<c-v>') or a table
+	-- 					-- mapping query_strings to modes.
+	-- 					-- selection_modes = {
+	-- 					-- 	["@parameter.outer"] = "v", -- charwise
+	-- 					-- 	["@function.outer"] = "V", -- linewise
+	-- 					-- 	["@class.outer"] = "<c-v>", -- blockwise
+	-- 					-- },
+	-- 					-- If you set this to `true` (default is `false`) then any textobject is
+	-- 					-- extended to include preceding or succeeding whitespace. Succeeding
+	-- 					-- whitespace has priority in order to act similarly to eg the built-in
+	-- 					-- `ap`.
+	-- 					--
+	-- 					-- Can also be a function which gets passed a table with the keys
+	-- 					-- * query_string: eg '@function.inner'
+	-- 					-- * selection_mode: eg 'v'
+	-- 					-- and should return true of false
+	-- 					include_surrounding_whitespace = true,
+	-- 				},
+	-- 				-- swap = {
+	-- 				-- 	enable = false,
+	-- 				-- 	swap_next = {
+	-- 				-- 		["<leader>a"] = "@parameter.inner",
+	-- 				-- 	},
+	-- 				-- 	swap_previous = {
+	-- 				-- 		["<leader>A"] = "@parameter.inner",
+	-- 				-- 	},
+	-- 				-- },
+	-- 				move = {
+	-- 					enable = true,
+	-- 					set_jumps = true, -- whether to set jumps in the jumplist
+	-- 					goto_next_start = {
+	-- 						["]f"] = "@function.outer",
+	-- 						["]]"] = { query = "@class.outer", desc = "Next class start" },
+	-- 						--
+	-- 						-- You can use regex matching (i.e. lua pattern) and/or pass a list in a "query" key to group multiple queires.
+	-- 						-- ["]o"] = "@loop.*",
+	-- 						-- ["]o"] = { query = { "@loop.inner", "@loop.outer" } }
+	-- 						--
+	-- 						-- You can pass a query group to use query from `queries/<lang>/<query_group>.scm file in your runtime path.
+	-- 						-- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
+	-- 						-- ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+	-- 						-- ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
+	-- 					},
+	-- 					goto_next_end = {
+	-- 						["]F"] = "@function.outer",
+	-- 						["]["] = "@class.outer",
+	-- 					},
+	-- 					goto_previous_start = {
+	-- 						["[f"] = "@function.outer",
+	-- 						["[["] = "@class.outer",
+	-- 					},
+	-- 					goto_previous_end = {
+	-- 						["[F"] = "@function.outer",
+	-- 						["[]"] = "@class.outer",
+	-- 					},
+	-- 					-- Below will go to either the start or the end, whichever is closer.
+	-- 					-- Use if you want more granular movements
+	-- 					-- Make it even more gradual by adding multiple queries and regex.
+	-- 					-- goto_next = {
+	-- 					-- 	["]d"] = "@conditional.outer",
+	-- 					-- },
+	-- 					-- goto_previous = {
+	-- 					-- 	["[d"] = "@conditional.outer",
+	-- 					-- },
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"simrat39/symbols-outline.nvim",
 		config = function()
@@ -641,215 +642,7 @@ lvim.plugins = {
 		"neogitorg/neogit",
 		config = function()
 			local neogit = require("neogit")
-
-			neogit.setup({
-				-- Hides the hints at the top of the status buffer
-				disable_hint = false,
-				-- Disables changing the buffer highlights based on where the cursor is.
-				disable_context_highlighting = false,
-				-- Disables signs for sections/items/hunks
-				disable_signs = false,
-				-- Do not ask to confirm the commit - just do it when the buffer is closed.
-				disable_commit_confirmation = false,
-				-- Changes what mode the Commit Editor starts in. `true` will leave nvim in normal mode, `false` will change nvim to
-				-- insert mode, and `"auto"` will change nvim to insert mode IF the commit message is empty, otherwise leaving it in
-				-- normal mode.
-				disable_insert_on_commit = true,
-				-- When enabled, will watch the `.git/` directory for changes and refresh the status buffer in response to filesystem
-				-- events.
-				filewatcher = {
-					interval = 1000,
-					enabled = true,
-				},
-				-- Allows a different telescope sorter. Defaults to 'fuzzy_with_index_bias'. The example below will use the native fzf
-				-- sorter instead. By default, this function returns `nil`.
-				telescope_sorter = function()
-					return require("telescope").extensions.fzf.native_fzf_sorter()
-				end,
-				-- Persist the values of switches/options within and across sessions
-				remember_settings = true,
-				-- Scope persisted settings on a per-project basis
-				use_per_project_settings = true,
-				-- Table of settings to never persist. Uses format "Filetype--cli-value"
-				ignored_settings = {
-					"NeogitPushPopup--force-with-lease",
-					"NeogitPushPopup--force",
-					"NeogitPullPopup--rebase",
-					"NeogitCommitPopup--allow-empty",
-					"NeogitRevertPopup--no-edit",
-				},
-				-- Neogit refreshes its internal state after specific events, which can be expensive depending on the repository size.
-				-- Disabling `auto_refresh` will make it so you have to manually refresh the status after you open it.
-				auto_refresh = true,
-				-- Value used for `--sort` option for `git branch` command
-				-- By default, branches will be sorted by commit date descending
-				-- Flag description: https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---sortltkeygt
-				-- Sorting keys: https://git-scm.com/docs/git-for-each-ref#_options
-				sort_branches = "-committerdate",
-				-- Change the default way of opening neogit
-				kind = "tab",
-				-- Disable line numbers and relative line numbers
-				disable_line_numbers = true,
-				-- The time after which an output console is shown for slow running commands
-				console_timeout = 2000,
-				-- Automatically show console if a command takes more than console_timeout milliseconds
-				auto_show_console = true,
-				status = {
-					recent_commit_count = 10,
-				},
-				commit_editor = {
-					kind = "split",
-				},
-				commit_select_view = {
-					kind = "tab",
-				},
-				commit_view = {
-					kind = "vsplit",
-					verify_commit = os.execute("which gpg") == 0, -- Can be set to true or false, otherwise we try to find the binary
-				},
-				log_view = {
-					kind = "tab",
-				},
-				rebase_editor = {
-					kind = "split",
-				},
-				reflog_view = {
-					kind = "tab",
-				},
-				merge_editor = {
-					kind = "split",
-				},
-				preview_buffer = {
-					kind = "split",
-				},
-				popup = {
-					kind = "split",
-				},
-				signs = {
-					-- { CLOSED, OPENED }
-					hunk = { "", "" },
-					item = { ">", "v" },
-					section = { ">", "v" },
-				},
-				-- Each Integration is auto-detected through plugin presence, however, it can be disabled by setting to `false`
-				integrations = {
-					-- If enabled, use telescope for menu selection rather than vim.ui.select.
-					-- Allows multi-select and some things that vim.ui.select doesn't.
-					telescope = nil,
-					-- Neogit only provides inline diffs. If you want a more traditional way to look at diffs, you can use `diffview`.
-					-- The diffview integration enables the diff popup.
-					--
-					-- Requires you to have `sindrets/diffview.nvim` installed.
-					diffview = true,
-
-					-- If enabled, uses fzf-lua for menu selection. If the telescope integration
-					-- is also selected then telescope is used instead
-					-- Requires you to have `ibhagwan/fzf-lua` installed.
-					fzf_lua = nil,
-				},
-				sections = {
-					-- Reverting/Cherry Picking
-					sequencer = {
-						folded = false,
-						hidden = false,
-					},
-					untracked = {
-						folded = false,
-						hidden = false,
-					},
-					unstaged = {
-						folded = false,
-						hidden = false,
-					},
-					staged = {
-						folded = false,
-						hidden = false,
-					},
-					stashes = {
-						folded = true,
-						hidden = false,
-					},
-					unpulled_upstream = {
-						folded = true,
-						hidden = false,
-					},
-					unmerged_upstream = {
-						folded = false,
-						hidden = false,
-					},
-					unpulled_pushRemote = {
-						folded = true,
-						hidden = false,
-					},
-					unmerged_pushRemote = {
-						folded = false,
-						hidden = false,
-					},
-					recent = {
-						folded = true,
-						hidden = false,
-					},
-					rebase = {
-						folded = true,
-						hidden = false,
-					},
-				},
-				mappings = {
-					finder = {
-						["<cr>"] = "Select",
-						["<c-c>"] = "Close",
-						["<esc>"] = "Close",
-						["<c-n>"] = "Next",
-						["<c-p>"] = "Previous",
-						["<down>"] = "Next",
-						["<up>"] = "Previous",
-						["<tab>"] = "MultiselectToggleNext",
-						["<s-tab>"] = "MultiselectTogglePrevious",
-						["<c-j>"] = "NOP",
-					},
-					-- Setting any of these to `false` will disable the mapping.
-					status = {
-						["q"] = "Close",
-						["I"] = "InitRepo",
-						["1"] = "Depth1",
-						["2"] = "Depth2",
-						["3"] = "Depth3",
-						["4"] = "Depth4",
-						["<tab>"] = "Toggle",
-						["x"] = "Discard",
-						["s"] = "Stage",
-						["S"] = "StageUnstaged",
-						["<c-s>"] = "StageAll",
-						["u"] = "Unstage",
-						["U"] = "UnstageStaged",
-						["d"] = "DiffAtFile",
-						["$"] = "CommandHistory",
-						["#"] = "Console",
-						["<c-r>"] = "RefreshBuffer",
-						["<enter>"] = "GoToFile",
-						["<c-v>"] = "VSplitOpen",
-						["<c-x>"] = "SplitOpen",
-						["<c-t>"] = "TabOpen",
-						["?"] = "HelpPopup",
-						["D"] = "DiffPopup",
-						["p"] = "PullPopup",
-						["r"] = "RebasePopup",
-						["m"] = "MergePopup",
-						["P"] = "PushPopup",
-						["c"] = "CommitPopup",
-						["l"] = "LogPopup",
-						["v"] = "RevertPopup",
-						["Z"] = "StashPopup",
-						["A"] = "CherryPickPopup",
-						["b"] = "BranchPopup",
-						["f"] = "FetchPopup",
-						["X"] = "ResetPopup",
-						["M"] = "RemotePopup",
-						["{"] = "GoToPreviousHunkHeader",
-						["}"] = "GoToNextHunkHeader",
-					},
-				},
-			})
+			neogit.setup({})
 		end,
 	},
 	"sindrets/diffview.nvim",
@@ -858,268 +651,28 @@ lvim.plugins = {
 	{
 		"simrat39/rust-tools.nvim",
 		config = function()
-			vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
-
-			local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
-			local codelldb_adapter = {
-				type = "server",
-				port = "${port}",
-				executable = {
-					command = mason_path .. "bin/codelldb",
-					args = { "--port", "${port}" },
-				},
-			}
-
-			local opts = {
-				tools = { -- rust-tools options
-
-					-- how to execute terminal commands
-					-- options right now: termopen / quickfix / toggleterm / vimux
-					executor = require("rust-tools.executors").termopen,
-
-					runnables = {
-						use_telescope = true,
-					},
-
-					-- callback to execute once rust-analyzer is done initializing the workspace
-					-- The callback receives one parameter indicating the `health` of the server: "ok" | "warning" | "error"
-					on_initialized = function()
-						vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
-							pattern = { "*.rs" },
-							callback = function()
-								local _, _ = pcall(vim.lsp.codelens.refresh)
-							end,
-						})
-					end,
-
-					-- automatically call RustReloadWorkspace when writing to a Cargo.toml file.
-					reload_workspace_from_cargo_toml = true,
-
-					-- These apply to the default RustSetInlayHints command
-					inlay_hints = {
-						-- automatically set inlay hints (type hints)
-						-- default: true
-						auto = true,
-
-						-- Only show inlay hints for the current line
-						only_current_line = false,
-
-						-- whether to show parameter hints with the inlay hints or not
-						-- default: true
-						show_parameter_hints = true,
-
-						-- prefix for parameter hints
-						-- default: "<-"
-						parameter_hints_prefix = "<- ",
-
-						-- prefix for all the other hints (type, chaining)
-						-- default: "=>"
-						other_hints_prefix = "=> ",
-
-						-- whether to align to the length of the longest line in the file
-						max_len_align = false,
-
-						-- padding from the left if max_len_align is true
-						max_len_align_padding = 1,
-
-						-- whether to align to the extreme right or not
-						right_align = false,
-
-						-- padding from the right if right_align is true
-						right_align_padding = 7,
-
-						-- The color of the hints
-						highlight = "Comment",
-					},
-
-					-- options same as lsp hover / vim.lsp.util.open_floating_preview()
-					hover_actions = {
-
-						-- the border that is used for the hover window
-						-- see vim.api.nvim_open_win()
-						border = {
-							{ "╭", "FloatBorder" },
-							{ "─", "FloatBorder" },
-							{ "╮", "FloatBorder" },
-							{ "│", "FloatBorder" },
-							{ "╯", "FloatBorder" },
-							{ "─", "FloatBorder" },
-							{ "╰", "FloatBorder" },
-							{ "│", "FloatBorder" },
-						},
-
-						-- Maximal width of the hover window. Nil means no max.
-						max_width = nil,
-
-						-- Maximal height of the hover window. Nil means no max.
-						max_height = nil,
-
-						-- whether the hover action window gets automatically focused
-						-- default: false
-						auto_focus = false,
-					},
-
-					-- settings for showing the crate graph based on graphviz and the dot
-					-- command
-					crate_graph = {
-						-- Backend used for displaying the graph
-						-- see: https://graphviz.org/docs/outputs/
-						-- default: x11
-						backend = "x11",
-						-- where to store the output, nil for no output stored (relative
-						-- path from pwd)
-						-- default: nil
-						output = nil,
-						-- true for all crates.io and external crates, false only the local
-						-- crates
-						-- default: true
-						full = true,
-
-						-- List of backends found on: https://graphviz.org/docs/outputs/
-						-- Is used for input validation and autocompletion
-						-- Last updated: 2021-08-26
-						enabled_graphviz_backends = {
-							"bmp",
-							"cgimage",
-							"canon",
-							"dot",
-							"gv",
-							"xdot",
-							"xdot1.2",
-							"xdot1.4",
-							"eps",
-							"exr",
-							"fig",
-							"gd",
-							"gd2",
-							"gif",
-							"gtk",
-							"ico",
-							"cmap",
-							"ismap",
-							"imap",
-							"cmapx",
-							"imap_np",
-							"cmapx_np",
-							"jpg",
-							"jpeg",
-							"jpe",
-							"jp2",
-							"json",
-							"json0",
-							"dot_json",
-							"xdot_json",
-							"pdf",
-							"pic",
-							"pct",
-							"pict",
-							"plain",
-							"plain-ext",
-							"png",
-							"pov",
-							"ps",
-							"ps2",
-							"psd",
-							"sgi",
-							"svg",
-							"svgz",
-							"tga",
-							"tiff",
-							"tif",
-							"tk",
-							"vml",
-							"vmlz",
-							"wbmp",
-							"webp",
-							"xlib",
-							"x11",
-						},
-					},
-				},
-
-				-- all the opts to send to nvim-lspconfig
-				-- these override the defaults set by rust-tools.nvim
-				-- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
-				server = {
-					-- standalone file support
-					-- setting it to false may improve startup time
-					standalone = true,
-					on_attach = function(client, bufnr)
-						require("lvim.lsp").common_on_attach(client, bufnr)
-						local rt = require("rust-tools")
-						vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
-					end,
-
-					capabilities = require("lvim.lsp").common_capabilities(),
-					settings = {
-						["rust-analyzer"] = {
-							lens = {
-								enable = true,
-							},
-							checkOnSave = {
-								enable = true,
-								command = "clippy",
-							},
-						},
-					},
-				}, -- rust-analyzer options
-
-				-- debugging stuff
-				dap = {
-					adapter = codelldb_adapter,
-				},
-			}
-
-			require("rust-tools").setup(opts)
-
-			-- CHANGED --
-			lvim.builtin.dap.on_config_done = function(dap)
-				dap.adapters.codelldb = codelldb_adapter
-				dap.configurations.rust = {
-					{
-						name = "Launch file",
-						type = "codelldb",
-						request = "launch",
-						program = function()
-							return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-						end,
-						cwd = "${workspaceFolder}",
-						stopOnEntry = false,
-					},
-				}
-			end
 		end,
 	},
-	{
-		"nacro90/numb.nvim",
-		config = function()
-			require("numb").setup({
-				show_numbers = true, -- Enable 'number' for the window while peeking
-				show_cursorline = true, -- Enable 'cursorline' for the window while peeking
-				hide_relativenumbers = true, -- Enable turning off 'relativenumber' for the window while peeking
-				number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
-				centered_peeking = true, -- Peeked line will be centered relative to window
-			})
-		end,
-	},
+	-- {
+	-- 	"nacro90/numb.nvim",
+	-- 	config = function()
+	-- 		require("numb").setup({
+	-- 			show_numbers = true, -- Enable 'number' for the window while peeking
+	-- 			show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+	-- 			hide_relativenumbers = true, -- Enable turning off 'relativenumber' for the window while peeking
+	-- 			number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
+	-- 			centered_peeking = true, -- Peeked line will be centered relative to window
+	-- 		})
+	-- 	end,
+	-- },
 	-- "windwp/nvim-spectre",
-	{
-		"andymass/vim-matchup",
-		config = function()
-			-- vim.g.matchup_enabled = 0
-			vim.g.matchup_matchparen_offscreen = { method = nil }
-			vim.g.matchup_matchpref = { html = { nolists = 1 } }
-			lvim.builtin.treesitter.matchup.enable = { "astro" }
-			lvim.builtin.treesitter.matchup.disable = { "lua" }
-			vim.cmd([[
-augroup matchup_matchparen_disable_ft
-  autocmd!
-  autocmd FileType lua let [b:matchup_matchparen_fallback,
-      \ b:matchup_matchparen_enabled] = [0, 0]
-augroup END
-]])
-		end,
-	},
+	-- FIXME
+	-- {
+	-- 	"andymass/vim-matchup",
+	-- 	config = function()
+	-- 		vim.g.matchup_matchparen_offscreen = { method = "popup" }
+	-- 	end,
+	-- },
 	{
 		"saecki/crates.nvim",
 		event = { "BufRead Cargo.toml" },
