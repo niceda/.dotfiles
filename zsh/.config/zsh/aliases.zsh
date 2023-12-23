@@ -1,7 +1,7 @@
 alias sudo='sudo -E'
 alias sra='sudo -E ranger'
 alias c='clear'
-alias vim='lvim'
+alias vim='nvim'
 alias ra='ranger'
 alias lg="lazygit"
 alias ex="explorer.exe ."

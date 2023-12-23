@@ -1,6 +1,6 @@
 # export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export PATH=$HOME/.local/bin:$PATH
-export EDITOR="lvim"
+export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export LOCALBIN=$XDG_CONFIG_HOME/bin
 export PATH=$PATH:$LOCALBIN
@@ -24,8 +24,10 @@ refreshenv() {
 }
 
 # 轻舟
-export http_proxy=http://10.4.1.44:7890
-export https_proxy=http://10.4.1.44:7890
+export http_proxy=http://192.168.0.105:7890
+export https_proxy=http://192.168.0.105:7890
+# export http_proxy=http://10.4.1.44:7890
+# export https_proxy=http://10.4.1.44:7890
 # export all_proxy=socks5://10.4.1.45:7890
 # 家
 # export http_proxy=http://192.168.1.200:7890
