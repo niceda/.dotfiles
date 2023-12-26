@@ -7,6 +7,7 @@ return {
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "sindrets/diffview.nvim", -- optional - Diff integration
   },
   opts = {
     disable_hint = true,
