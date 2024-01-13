@@ -9,14 +9,15 @@ local keymap = vim.keymap.set
 -- git
 keymap("n", "<leader>gg", function()
   Util.terminal({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false })
-end, {noremap = true, silent = true, desc = "Lazygit (cwd)" })
+end, { noremap = true, silent = true, desc = "Lazygit (cwd)" })
 keymap("n", "<C-g>", function()
   Util.terminal({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false })
-end, {noremap = true, silent = true, desc = "Lazygit (cwd)" })
+end, { noremap = true, silent = true, desc = "Lazygit (cwd)" })
 keymap("n", "<leader>gG", function()
   Util.terminal({ "lazygit" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
-end, {noremap = true, silent = true, desc = "Lazygit (root dir)" })
+end, { noremap = true, silent = true, desc = "Lazygit (root dir)" })
 
+-- lsp
 keymap("n", "gl", function()
   local float = vim.diagnostic.config().float
 
@@ -28,5 +29,35 @@ keymap("n", "gl", function()
   end
 end, { noremap = true, silent = true, desc = "Show line diagnostics" })
 
-keymap("n", "<leader>r", ":call CompileRunGcc()<CR>", opts)
+-- floating terminal
+local lazyterm = function()
+  Util.terminal(nil, { cwd = Util.root() })
+end
+keymap("n", "<leader>ft", function()
+  Util.terminal()
+end, { desc = "Terminal (cwd)" })
+keymap("n", "<leader>fT", lazyterm, { desc = "Terminal (root dir)" })
+keymap("n", "<leader>\\", function()
+  Util.terminal()
+end, { desc = "Terminal (cwd)" })
+keymap("t", "<leader>\\", "<cmd>close<cr>", { desc = "Hide Terminal" })
+-- keymap("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
+-- map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
+vim.keymap.del("n", "<c-_>")
+vim.keymap.del("t", "<c-_>")
+vim.keymap.del("t", "<C-h>")
+vim.keymap.del("t", "<C-j>")
+vim.keymap.del("t", "<C-k>")
+vim.keymap.del("t", "<C-l>")
+
+-- Better paste and copy
+-- remap "p" in visual mode to delete the highlighted text without overwriting your yanked/copied text, and then paste the content from the unnamed register.
+keymap("v", "p", '"_dP', opts)
 keymap("n", "Y", "y$", opts)
+
+-- Copy whole file content to clipboard with C-c
+keymap("n", "<C-c>", ":%y+<CR>", opts)
+
+-- other
+keymap("n", "<leader>r", ":call CompileRunGcc()<CR>", opts)
+keymap("n", "<C-q>", ":call QuickFixToggle()<CR>", opts)

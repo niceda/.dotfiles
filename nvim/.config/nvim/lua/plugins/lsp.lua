@@ -1,7 +1,7 @@
 return {
   {
     "lvimuser/lsp-inlayhints.nvim",
-    ft = { "c", "cpp", "python", "go", "json" },
+    ft = { "python", "go", "json" },
     opts = {
       debug_mode = true,
     },
