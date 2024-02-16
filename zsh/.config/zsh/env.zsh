@@ -8,7 +8,7 @@ export LOCALPROG=$HOME/prog
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/.zsh_history"
-export GOPATH="$HOME/go"
+export GOPATH="$HOME/Program/go"
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=~/.npm-global/bin:$PATH
@@ -24,11 +24,13 @@ refreshenv() {
 }
 
 # 轻舟
-export http_proxy=http://192.168.0.105:7890
-export https_proxy=http://192.168.0.105:7890
-# export http_proxy=http://10.4.1.44:7890
-# export https_proxy=http://10.4.1.44:7890
+# export http_proxy=http://192.168.0.122:7890
+# export https_proxy=http://192.168.0.122:7890
+export http_proxy=http://10.4.1.99:7890
+export https_proxy=http://10.4.1.99:7890
+
 # export all_proxy=socks5://10.4.1.45:7890
+
 # 家
 # export http_proxy=http://192.168.1.200:7890
 # export https_proxy=http://192.168.1.200:7890
