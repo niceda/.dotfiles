@@ -1,0 +1,2 @@
+Server = https://mirrors.aliyun.com/archlinuxarm/$arch/$repo
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxarm/$arch/$repo

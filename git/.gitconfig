@@ -1,0 +1,10 @@
+[user]
+	name = fida
+	email = iwanderuu@gmail.com
+[push]
+	default = current
+	autoSetupRemote = true
+[credential]
+	helper = store
+[core]
+	excludesFile = ~/.gitignore_global

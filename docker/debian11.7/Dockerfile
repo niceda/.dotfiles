@@ -1,6 +1,7 @@
-FROM debian:11.7
+FROM --platform=linux/amd64 debian:11.7
 
 ARG user=fida
+ARG password=603551
 
 RUN sed -i s/deb.debian.org/mirrors.aliyun.com/g /etc/apt/sources.list && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 

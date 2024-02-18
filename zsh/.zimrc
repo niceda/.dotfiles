@@ -8,7 +8,7 @@ zmodule git-info
 zmodule duration-info
 zmodule prompt-pwd
 # zmodule magicmace
-zmodule gitster
+# zmodule gitster
 zmodule zsh-users/zsh-completions
 zmodule zsh-users/zsh-autosuggestions
 zmodule zsh-users/zsh-history-substring-search

@@ -28,5 +28,4 @@ fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
 
-# nvm
-source /usr/share/nvm/init-nvm.sh
+eval "$(starship init zsh)"
