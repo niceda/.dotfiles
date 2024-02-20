@@ -1,4 +1,5 @@
-FROM archlinux/archlinux:base-devel
+# FROM archlinux/archlinux:base-devel
+FROM menci/archlinuxarm:base-devel
 
 COPY pacman.conf /etc/pacman.conf
 COPY mirrorlist /etc/pacman.d/mirrorlist
@@ -60,6 +61,8 @@ RUN git clone https://github.com/niceda/.dotfiles.git /home/${USERNAME}/.dotfile
     && stow nvim \
     && stow git \
     && stow ranger
+
+RUN sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 # RUN git clone https://aur.archlinux.org/yay.git \
 #     && cd yay \
