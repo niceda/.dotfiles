@@ -145,4 +145,95 @@ return {
       { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (root dir)", remap = true },
     },
   },
+  {
+    "williamboman/mason.nvim",
+    keys = {
+      { "<leader>cm", false },
+      { "<leader>lm", "<cmd>Mason<cr>", desc = "Mason" },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    keys = {
+      { "<leader>cF", false },
+      {
+        "<leader>lF",
+        function()
+          require("conform").format({ formatters = { "injected" } })
+        end,
+        mode = { "n", "v" },
+        desc = "Format Injected Langs",
+      },
+    },
+  },
+  {
+    "linux-cultist/venv-selector.nvim",
+    keys = {
+      { "<leader>cv", false },
+      { "<leader>lv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv" },
+    },
+  },
+  -- {
+  --   "echasnovski/mini.bufremove",
+  --   keys = {
+  --     {
+  --       "<leader>c",
+  --       function()
+  --         local bd = require("mini.bufremove").delete
+  --         if vim.bo.modified then
+  --           local choice = vim.fn.confirm(("Save changes to %q?"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
+  --           if choice == 1 then -- Yes
+  --             vim.cmd.write()
+  --             bd(0)
+  --           elseif choice == 2 then -- No
+  --             bd(0, true)
+  --           end
+  --         else
+  --           bd(0)
+  --         end
+  --       end,
+  --       desc = "Delete Buffer",
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   opts = {
+  --     panel = {
+  --       enabled = true,
+  --       auto_refresh = false,
+  --       keymap = {
+  --         jump_prev = "[[",
+  --         jump_next = "]]",
+  --         accept = "<CR>",
+  --         refresh = "gr",
+  --         open = "<M-CR>",
+  --       },
+  --       layout = {
+  --         position = "bottom", -- | top | left | right
+  --         ratio = 0.4,
+  --       },
+  --     },
+  --     -- suggestion = {
+  --     --   enabled = true,
+  --     --   auto_trigger = true,
+  --     --   debounce = 75,
+  --     --   keymap = {
+  --     --     accept = "<c-l>",
+  --     --     accept_word = false,
+  --     --     accept_line = false,
+  --     --     next = "<c-j>",
+  --     --     prev = "<c-k>",
+  --     --     dismiss = "<C-]>",
+  --     --   },
+  --     -- },
+  --   },
+  -- },
+  {
+    "simrat39/symbols-outline.nvim",
+    keys = {
+      { "<leader>cs", false },
+      { "<leader>ls", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" },
+    },
+  },
 }
