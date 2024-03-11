@@ -41,17 +41,17 @@ fzf-cd-widget() {
 zle -N fzf-cd-widget
 bindkey '^t' fzf-cd-widget
 
-fzf-history-widget() {
-	local num=$(fhistory $LBUFFER)
-	local ret=$?
-	if [[ -n $num ]]; then
-		zle vi-fetch-history -n $num
-	fi
-	zle reset-prompt
-	return $ret
-}
-zle -N fzf-history-widget
-bindkey '^R' fzf-history-widget
+# fzf-history-widget() {
+# 	local num=$(fhistory $LBUFFER)
+# 	local ret=$?
+# 	if [[ -n $num ]]; then
+# 		zle vi-fetch-history -n $num
+# 	fi
+# 	zle reset-prompt
+# 	return $ret
+# }
+# zle -N fzf-history-widget
+# bindkey '^R' fzf-history-widget
 
 fif() {
   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi

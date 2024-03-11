@@ -15,6 +15,6 @@ zmodule zsh-users/zsh-history-substring-search
 zmodule supercrabtree/k
 zmodule hlissner/zsh-autopair
 zmodule pabloariasal/zfm
-zmodule agkozak/zsh-z
+# zmodule agkozak/zsh-z
 zmodule Aloxaf/fzf-tab
 zmodule zdharma/fast-syntax-highlighting

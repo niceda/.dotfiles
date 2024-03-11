@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd /Users/fida/Documents/Code/qz/repo/build/app/device/
+make -j6
+strip -x -w --keep-file-symbols device
+rm device.gz
+gzip device
+curl -v --user 'xiongdajun:xiongdajun@skiff123' --upload-file "device.gz" https://nexus-inf.skiffenergy.com/repository/skiffenergy-bin-release/pkg/device-xdj.gz

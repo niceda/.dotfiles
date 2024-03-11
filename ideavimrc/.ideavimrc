@@ -35,11 +35,15 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-h> <c-w>h
 nnoremap <c-k> <c-w>k
 
+" navigation
+nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
+nnoremap <c-g> :action Git.Menu<cr>
+
+
 " Lsp
 nnoremap <leader>lr :action RenameElement<CR>
 nnoremap <leader>lf :action ReformatCode<CR>
-nnoremap [d :action GotoPreviousError<CR>
-nnoremap ]d :action GotoNextError<CR>
 nnoremap <leader>lk :action GotoPreviousError<CR>
 nnoremap <leader>lj :action GotoNextError<CR>
 nnoremap <leader>lg :action Generate<CR>

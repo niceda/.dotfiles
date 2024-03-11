@@ -5,5 +5,6 @@
 .settings
 .classpath
 .project
-bin
 *.iml
+build*/
+compile_commands.json

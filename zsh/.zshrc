@@ -28,4 +28,6 @@ fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
 
+eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
