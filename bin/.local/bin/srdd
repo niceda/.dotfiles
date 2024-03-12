@@ -6,4 +6,4 @@ strip -x -w --keep-file-symbols device
 rm device-xdj.gz
 mv device.gz device-xdj.gz
 gzip device
-curl -v --user 'xiongdajun:xiongdajun@skiff123' --upload-file "device.gz" https://nexus-inf.skiffenergy.com/repository/skiffenergy-bin-release/pkg/device-xdj.gz
+scp -i ~/.ssh/id_rsa_phy10_zjk /Users/fida/Documents/Code/qz/repo/build/app/device/device.gz rd@zjk-rd.skiffenergy.com:/home/rd/
