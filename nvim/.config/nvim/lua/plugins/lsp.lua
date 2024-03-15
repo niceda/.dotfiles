@@ -76,10 +76,10 @@ return {
       keys[#keys + 1] = { "gr", false }
       keys[#keys + 1] = { "gI", false }
       -- keys[#keys + 1] = { "<c-k>", false }
-      keys[#keys + 1] = {"gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "Goto definition" }
-      keys[#keys + 1] = {"gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" }
-      keys[#keys + 1] = {"gr", "<cmd>lua vim.lsp.buf.references()<cr>", "Goto references" }
-      keys[#keys + 1] = {"gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", "Goto Implementation" }
+      keys[#keys + 1] = { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "Goto definition" }
+      keys[#keys + 1] = { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" }
+      keys[#keys + 1] = { "gr", "<cmd>lua vim.lsp.buf.references()<cr>", "Goto references" }
+      keys[#keys + 1] = { "gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", "Goto Implementation" }
       -- keys[#keys + 1] = {"gS", "<cmd>lua vim.lsp.buf.signature_help()<cr>", "show signature help" }
 
       keys[#keys + 1] = { "<leader>cl", false }
