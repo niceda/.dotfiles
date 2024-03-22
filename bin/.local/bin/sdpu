@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /Users/fida/Documents/Code/qz/dpoll/target/debug
+cargo build
 mv dpoll.gz dpoll-pre.gz
-gzip dpoll
+gzip -f dpoll
 curl -v --user 'xiongdajun:xiongdajun@skiff123' --upload-file "dpoll.gz" https://nexus-inf.skiffenergy.com/repository/skiffenergy-bin-release/pkg/dpoll.gz
