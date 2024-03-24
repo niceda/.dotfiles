@@ -2,12 +2,6 @@ local Util = require("lazyvim.util")
 
 return {
   {
-    "Saecki/crates.nvim",
-    keys = {
-      -- { "<leader>cf", "<cmd>lua require('crates').show_features_popup()<cr>", desc = "Show features (Rust)" },
-    },
-  },
-  {
     "neo-tree.nvim",
     opts = {
       window = {

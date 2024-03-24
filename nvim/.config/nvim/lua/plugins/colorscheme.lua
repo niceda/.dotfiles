@@ -1,10 +1,6 @@
 return {
-  -- add gruvbox
-  -- { "ellisonleao/gruvbox.nvim" },
-  { "LunarVim/lunar.nvim" },
+  { "ellisonleao/gruvbox.nvim" },
 
-  -- { url = "git@github.com:LunarVim/primer.nvim.git" },
-  -- { url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
   { "Mofiqul/vscode.nvim" },
   {
     "catppuccin/nvim",
@@ -22,12 +18,12 @@ return {
   },
   },
 
-  -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "catppuccin",
+      -- colorscheme = "vscode",
       colorscheme = "catppuccin",
+      -- colorscheme = "gruvbox",
     },
   },
 }
