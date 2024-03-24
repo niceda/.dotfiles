@@ -40,30 +40,38 @@ return {
         },
         rust_analyzer = {
           keys = {
-            { "<leader>dr", false },
-
-            { "<leader>r", "<cmd>RustRunnables<Cr>", desc = "Runnables (Rust)" },
+            --   { "<leader>dr", false },
+            --
+            --   { "<leader>r", "<cmd>RustRunnables<Cr>", desc = "Runnables (Rust)" },
+            --   { "<leader>ca", "<cmd>lua require('crates').update_all_crates()<cr>", desc = "Update all crates" },
+            --   { "<leader>cA", "<cmd>lua require('crates').upgrade_all_crates()<cr>", desc = "Upgrade all crates" },
+            --   { "<leader>cc", "<cmd>RustOpenCargo<Cr>", desc = "Open Cargo" },
+            --   { "<leader>cd", "<cmd>RustDebuggables<Cr>", desc = "Debuggables" },
+            --   { "<leader>cD", "<cmd>RustOpenExternalDocs<Cr>", desc = "Open Docs" },
+            --   { "<leader>cf", "<cmd>lua require('crates').show_features_popup()<cr>", desc = "Show features" },
+            --   { "<leader>cm", "<cmd>RustExpandMacro<Cr>", desc = "Expand Macro" },
+            --   { "<leader>co", "<cmd>RustOpenExternalDocs<Cr>", desc = "Open External Docs" },
+            --   { "<leader>cp", "<cmd>RustParentModule<Cr>", desc = "Parent Module" },
+            --   { "<leader>cr", "<cmd>lua require('crates').reload()<cr>", desc = "Reload" },
+            --   {
+            --     "<leader>cR",
+            --     "<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<Cr>",
+            --     desc = "Reload Workspace",
+            --   },
+            --   { "<leader>cs", "<cmd>lua require('crates').show_popup()<cr>", desc = "Show Popup" },
+            --   { "<leader>ct", "<cmd>lua _CARGO_TEST()<cr>", desc = "Cargo Test" },
+            --   { "<leader>cu", "<cmd>lua require('crates').update_crate()<cr>", desc = "Update crate" },
+            --   { "<leader>cU", "<cmd>lua require('crates').upgrade_crate()<cr>", desc = "Upgrade crate" },
+            --   { "<leader>cv", "<cmd>lua require('crates').show_versions_popup()<cr>", desc = "Show versions" },
+            --   { "<leader>cV", "<cmd>RustViewCrateGraph<Cr>", desc = "View Crate Graph" },
             { "<leader>ca", "<cmd>lua require('crates').update_all_crates()<cr>", desc = "Update all crates" },
             { "<leader>cA", "<cmd>lua require('crates').upgrade_all_crates()<cr>", desc = "Upgrade all crates" },
-            { "<leader>cc", "<cmd>RustOpenCargo<Cr>", desc = "Open Cargo" },
-            { "<leader>cd", "<cmd>RustDebuggables<Cr>", desc = "Debuggables" },
-            { "<leader>cD", "<cmd>RustOpenExternalDocs<Cr>", desc = "Open Docs" },
             { "<leader>cf", "<cmd>lua require('crates').show_features_popup()<cr>", desc = "Show features" },
-            { "<leader>cm", "<cmd>RustExpandMacro<Cr>", desc = "Expand Macro" },
-            { "<leader>co", "<cmd>RustOpenExternalDocs<Cr>", desc = "Open External Docs" },
-            { "<leader>cp", "<cmd>RustParentModule<Cr>", desc = "Parent Module" },
             { "<leader>cr", "<cmd>lua require('crates').reload()<cr>", desc = "Reload" },
-            {
-              "<leader>cR",
-              "<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<Cr>",
-              desc = "Reload Workspace",
-            },
             { "<leader>cs", "<cmd>lua require('crates').show_popup()<cr>", desc = "Show Popup" },
-            { "<leader>ct", "<cmd>lua _CARGO_TEST()<cr>", desc = "Cargo Test" },
             { "<leader>cu", "<cmd>lua require('crates').update_crate()<cr>", desc = "Update crate" },
             { "<leader>cU", "<cmd>lua require('crates').upgrade_crate()<cr>", desc = "Upgrade crate" },
             { "<leader>cv", "<cmd>lua require('crates').show_versions_popup()<cr>", desc = "Show versions" },
-            { "<leader>cV", "<cmd>RustViewCrateGraph<Cr>", desc = "View Crate Graph" },
           },
         },
       },
@@ -130,5 +138,58 @@ return {
         keys[#keys + 1] = { "<leader>lr", vim.lsp.buf.rename, desc = "Rename", has = "rename" }
       end
     end,
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^4", -- Recommended
+    ft = { "rust" },
+    opts = {
+      server = {
+        on_attach = function(_, bufnr)
+          vim.keymap.set("n", "<leader>r", function()
+            vim.cmd.RustLsp("runnables")
+          end, { desc = "Runnables (Rust)", buffer = bufnr })
+          vim.keymap.set("n", "<leader>ct", function()
+            vim.cmd.RustLsp("testables")
+          end, { desc = "Cargo Test", buffer = bufnr })
+          vim.keymap.set("n", "<leader>cc", function()
+            vim.cmd.RustLsp("openCargo")
+          end, { desc = "Open Cargo", buffer = bufnr })
+          vim.keymap.set("n", "<leader>cp", function()
+            vim.cmd.RustLsp("parentModule")
+          end, { desc = "Parent Module", buffer = bufnr })
+          vim.keymap.set("n", "<leader>cd", function()
+            vim.cmd.RustLsp("debuggables")
+          end, { desc = "Rust debuggables", buffer = bufnr })
+          vim.keymap.set("n", "<leader>cm", function()
+            vim.cmd.RustLsp("expandMacro")
+          end, { desc = "Expand Macro", buffer = bufnr })
+          vim.keymap.set("n", "<leader>cV", function()
+            vim.cmd.RustLsp({ "crateGraph", "[backend]", "[output]" })
+          end, { desc = "View Crate Graph", buffer = bufnr })
+          -- vim.keymap.set("n", "<leader>ca", function() require("crates").update_all_crates() end, { desc = "Update all crates", buffer = bufnr })
+          -- vim.keymap.set("n", "<leader>cA", function() require("crates").upgrade_all_crates() end, { desc = "Upgrade all crates", buffer = bufnr })
+          -- vim.keymap.set("n", "<leader>cf", function() require("crates").show_features_popup() end, { desc = "Show features", buffer = bufnr })
+          -- vim.keymap.set("n", "<leader>cr", function() require("crates").reload() end, { desc = "Reload", buffer = bufnr })
+          -- vim.keymap.set("n", "<leader>cs", function() require("crates").show_popup() end, { desc = "Show Popup", buffer = bufnr })
+          -- vim.keymap.set("n", "<leader>cu", function() require("crates").update_crate() end, { desc = "Update crate", buffer = bufnr })
+          -- vim.keymap.set("n", "<leader>cU", function() require("crates").upgrade_crate() end, { desc = "Upgrade crate", buffer = bufnr })
+          -- vim.keymap.set("n", "<leader>cv", function() require("crates").show_versions_popup() end, { desc = "Show versions", buffer = bufnr })
+        end,
+      },
+    },
+  },
+  {
+    "Saecki/crates.nvim",
+    keys = {
+      { "<leader>ca", "<cmd>lua require('crates').update_all_crates()<cr>", desc = "Update all crates" },
+      { "<leader>cA", "<cmd>lua require('crates').upgrade_all_crates()<cr>", desc = "Upgrade all crates" },
+      { "<leader>cf", "<cmd>lua require('crates').show_features_popup()<cr>", desc = "Show features" },
+      { "<leader>cr", "<cmd>lua require('crates').reload()<cr>", desc = "Reload" },
+      { "<leader>cs", "<cmd>lua require('crates').show_popup()<cr>", desc = "Show Popup" },
+      { "<leader>cu", "<cmd>lua require('crates').update_crate()<cr>", desc = "Update crate" },
+      { "<leader>cU", "<cmd>lua require('crates').upgrade_crate()<cr>", desc = "Upgrade crate" },
+      { "<leader>cv", "<cmd>lua require('crates').show_versions_popup()<cr>", desc = "Show versions" },
+    },
   },
 }
