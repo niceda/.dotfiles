@@ -182,14 +182,15 @@ return {
   {
     "Saecki/crates.nvim",
     keys = {
-      { "<leader>ca", "<cmd>lua require('crates').update_all_crates()<cr>", desc = "Update all crates" },
-      { "<leader>cA", "<cmd>lua require('crates').upgrade_all_crates()<cr>", desc = "Upgrade all crates" },
-      { "<leader>cf", "<cmd>lua require('crates').show_features_popup()<cr>", desc = "Show features" },
-      { "<leader>cr", "<cmd>lua require('crates').reload()<cr>", desc = "Reload" },
-      { "<leader>cs", "<cmd>lua require('crates').show_popup()<cr>", desc = "Show Popup" },
-      { "<leader>cu", "<cmd>lua require('crates').update_crate()<cr>", desc = "Update crate" },
-      { "<leader>cU", "<cmd>lua require('crates').upgrade_crate()<cr>", desc = "Upgrade crate" },
-      { "<leader>cv", "<cmd>lua require('crates').show_versions_popup()<cr>", desc = "Show versions" },
+      --   { "<leader>ca", "<cmd>lua require('crates').update_all_crates()<cr>", desc = "Update all crates" },
+      --   { "<leader>cA", "<cmd>lua require('crates').upgrade_all_crates()<cr>", desc = "Upgrade all crates" },
+      --   { "<leader>cf", "<cmd>lua require('crates').show_features_popup()<cr>", desc = "Show features" },
+      --   { "<leader>cr", "<cmd>lua require('crates').reload()<cr>", desc = "Reload" },
+      --   { "<leader>cs", "<cmd>lua require('crates').show_popup()<cr>", desc = "Show Popup" },
+      --   { "<leader>cu", "<cmd>lua require('crates').update_crate()<cr>", desc = "Update crate" },
+      --   { "<leader>cU", "<cmd>lua require('crates').upgrade_crate()<cr>", desc = "Upgrade crate" },
+      --   { "<leader>cv", "<cmd>lua require('crates').show_versions_popup()<cr>", desc = "Show versions" },
+      -- },
     },
   },
 }
