@@ -66,3 +66,4 @@ keymap("n", "<C-c>", ":%y+<CR>", opts)
 -- other
 keymap("n", "<leader>r", ":call CompileRunGcc()<CR>", opts)
 keymap("n", "<C-q>", ":call QuickFixToggle()<CR>", opts)
+keymap("n", "<leader>L", "<cmd>Lazy<cr>", opts)
