@@ -36,6 +36,8 @@ export PATH="/opt/homebrew/opt/protobuf@21/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/protobuf@21/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/protobuf@21/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/protobuf@21/lib/pkgconfig"
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
