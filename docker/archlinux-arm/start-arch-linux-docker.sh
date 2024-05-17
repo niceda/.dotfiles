@@ -22,6 +22,9 @@ else
         -v $HOME/Documents/Code:/Users/fida/Documents/Code \
 		-h $HOSTNAME \
 		-e DISPLAY=$DISPLAY \
+		-e https_proxy=http://127.0.0.1:7890 \
+		-e http_proxy=http://127.0.0.1:7890 \
+        -e all_proxy=socks5://127.0.0.1:7890 \
 		-h $HOSTNAME \
 		--network host \
 		--name archlinux-x86-tmux \

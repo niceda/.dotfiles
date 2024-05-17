@@ -32,6 +32,8 @@ RUN apt -y --no-install-recommends install libssl-dev
 RUN apt -y --no-install-recommends install inetutils-ping
 RUN apt -y --no-install-recommends install stow
 
+apt install gcc g++ cmake git curl openjdk-11-jdk build-essential gdb gdbserver clang-format clangd man net-tools iproute2 libssl-dev inetutils-ping wget stow
+
 # RUN rm -rf /var/lib/apt/lists/*
 
 RUN useradd --create-home --no-log-init --shell /bin/bash ${user} \
