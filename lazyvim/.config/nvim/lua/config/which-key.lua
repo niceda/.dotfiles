@@ -11,9 +11,9 @@ wk.register({
 }, { prefix = "<leader>" })
 
 -- comment
-wk.register({
-  ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
-}, { prefix = "<leader>" })
-wk.register({
-  ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
-}, { prefix = "<leader>", mode = "v" })
+-- wk.register({
+--   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
+-- }, { prefix = "<leader>" })
+-- wk.register({
+--   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
+-- }, { prefix = "<leader>", mode = "v" })
