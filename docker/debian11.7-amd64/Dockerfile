@@ -1,4 +1,5 @@
-FROM --platform=linux/amd64 debian:11.7
+# FROM --platform=linux/amd64 debian:11.7
+FROM debian:11.7
 
 ARG user=fida
 ARG password=603551
@@ -31,6 +32,7 @@ RUN apt -y --no-install-recommends install locate
 RUN apt -y --no-install-recommends install libssl-dev
 RUN apt -y --no-install-recommends install inetutils-ping
 RUN apt -y --no-install-recommends install stow
+RUN apt -y --no-install-recommends install libsystemd-dev 
 # RUN rm -rf /var/lib/apt/lists/*
 
 RUN useradd --create-home --no-log-init --shell /bin/bash ${user} \
