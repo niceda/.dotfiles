@@ -1,0 +1,7 @@
+cd ~
+git clone https://github.com/niceda/.dotfiles.git
+rm .bashrc
+cd .dotfiles
+stow bash
+stow git
+sudo apt install gcc g++ cmake git curl wget openjdk-11-jdk stow ranger libsystemd-dev clangd clang-format gdb
