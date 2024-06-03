@@ -29,8 +29,6 @@ return {
       },
     },
     keys = {
-      { "<leader>/", false },
-      { "<leader>t", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
       { "<leader><space>", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
       { "<leader>ff", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
       { "<leader>fF", Util.telescope("files"), desc = "Find Files (root dir)" },
