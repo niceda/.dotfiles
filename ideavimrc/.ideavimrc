@@ -28,7 +28,6 @@ nnoremap Y y$
 nnoremap gl <ESC>:action ShowErrorDescription<CR>
 nnoremap gI :action GotoImplementation<cr>
 nnoremap gr :action FindUsages<cr>
-nnoremap <leader>c :action CloseContent<cr>
 nnoremap <leader><CR> :nohlsearch<cr>
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j

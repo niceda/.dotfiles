@@ -1,5 +1,5 @@
-# FROM --platform=linux/amd64 debian:11.7
-FROM debian:11.7
+# FROM debian:11.7
+FROM --platform=linux/amd64 debian:11.7
 
 ARG user=fida
 ARG password=603551
