@@ -188,11 +188,4 @@ return {
   --     -- },
   --   },
   -- },
-  {
-    "simrat39/symbols-outline.nvim",
-    keys = {
-      { "<leader>cs", false },
-      { "<leader>ls", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" },
-    },
-  },
 }
