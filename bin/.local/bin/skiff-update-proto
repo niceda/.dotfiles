@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/actor/
+bash update.sh
+cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/grpc/
+bash update.sh
+cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/devpub/
+bash update.sh
+cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/thing/
+bash update.sh
+
+cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-java/src/main/proto/
+bash update.sh
+
+
