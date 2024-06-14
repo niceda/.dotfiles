@@ -12,4 +12,5 @@ bash update.sh
 cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-java/src/main/proto/
 bash update.sh
 
-
+cp -r ~/Documents/Code/qz/repo/thing/common/proto/ ~/Documents/Code/qz/device-rust/proto/
+cp -r ~/Documents/Code/qz/repo/thing/common/grpc/ ~/Documents/Code/qz/device-rust/grpc/
