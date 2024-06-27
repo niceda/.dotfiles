@@ -7,4 +7,5 @@
 .project
 *.iml
 build*/
+!build_support/
 compile_commands.json
