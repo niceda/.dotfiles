@@ -10,3 +10,5 @@
 	excludesFile = ~/.gitignore_global
 [pull]
   rebase = true
+[rebase]
+	autoStash = true
