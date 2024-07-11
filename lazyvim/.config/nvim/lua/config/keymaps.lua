@@ -16,6 +16,11 @@ keymap("n", "<leader>gf", function()
   LazyVim.lazygit({ cwd = LazyVim.root.git(), args = { "-f", vim.trim(git_path) } })
 end, { desc = "Lazygit Current File History" })
 
+-- FIXME:
+-- keymap("n", "<leader>ge", function()
+--   require("neo-tree.command").execute({ source = "git_status", toggle = true, dir = LazyVim.root() })
+-- end, { desc = "Git Explorer" })
+
 -- lsp
 keymap("n", "gl", function()
   local float = vim.diagnostic.config().float
