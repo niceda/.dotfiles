@@ -7,12 +7,14 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
 -- git
--- keymap("n", "<C-g>", function()
---   Util.terminal({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false })
--- end, { noremap = true, silent = true, desc = "Lazygit (cwd)" })
 keymap("n", "<C-g>", function()
-  Util.terminal({ "lazygit" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
-end, { noremap = true, silent = true, desc = "Lazygit (root dir)" })
+  LazyVim.lazygit({ cwd = LazyVim.root.git() })
+end, { desc = "Lazygit (Root Dir)" })
+
+keymap("n", "<leader>gf", function()
+  local git_path = vim.api.nvim_buf_get_name(0)
+  LazyVim.lazygit({ cwd = LazyVim.root.git(), args = { "-f", vim.trim(git_path) } })
+end, { desc = "Lazygit Current File History" })
 
 -- lsp
 keymap("n", "gl", function()
