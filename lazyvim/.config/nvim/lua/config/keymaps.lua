@@ -2,7 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local Util = require("lazyvim.util")
+-- local Util = require("lazyvim.util")
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
@@ -16,10 +16,17 @@ keymap("n", "<leader>gf", function()
   LazyVim.lazygit({ cwd = LazyVim.root.git(), args = { "-f", vim.trim(git_path) } })
 end, { desc = "Lazygit Current File History" })
 
--- FIXME:
-keymap("n", "<leader>ge", function()
-  require("neo-tree.command").execute({ source = "git_status", toggle = true, dir = vim.uv.cwd() })
-end, { desc = "Git Explorer" })
+-- keymap("n", "<leader>ge", function()
+--   require("neo-tree.command").execute({
+--     source = "git_status",
+--     toggle = true,
+--     dir = vim.uv.cwd(), -- FIXME:
+--   })
+-- end, { desc = "Git Explorer" })
+
+keymap("n", "<leader>gn", function()
+  require("neogit").open({ cwd = LazyVim.root.git() })
+end, { desc = "Open Neogit Commit Page" })
 
 -- lsp
 keymap("n", "gl", function()
