@@ -17,9 +17,9 @@ keymap("n", "<leader>gf", function()
 end, { desc = "Lazygit Current File History" })
 
 -- FIXME:
--- keymap("n", "<leader>ge", function()
---   require("neo-tree.command").execute({ source = "git_status", toggle = true, dir = LazyVim.root() })
--- end, { desc = "Git Explorer" })
+keymap("n", "<leader>ge", function()
+  require("neo-tree.command").execute({ source = "git_status", toggle = true, dir = vim.uv.cwd() })
+end, { desc = "Git Explorer" })
 
 -- lsp
 keymap("n", "gl", function()
