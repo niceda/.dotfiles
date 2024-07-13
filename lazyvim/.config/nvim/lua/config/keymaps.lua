@@ -59,14 +59,13 @@ keymap("n", "<C-q>", ":call QuickFixToggle()<CR>", opts)
 -- keymap("n", "<leader>L", "<cmd>Lazy<cr>", opts)
 
 -- which-key
-local wk = require("which-key")
-
 -- copilot
-wk.register({
-  a = {
-    name = "+A.I.", -- optional group name
-    s = { "<cmd>Copilot suggestion<CR>", "Toggle Copilot Suggestion" }, -- create a binding with label
-    r = { "<cmd>Copilot panel<CR>", "Toggle Copilot Panel" }, -- create a binding with label
-    t = { "<cmd>Copilot toggle<CR>", "Toggle Copilot" }, -- create a binding with label
-  },
-}, { prefix = "<leader>" })
+local wk = require("which-key")
+wk.add({
+  {
+    mode = { "n", "v" },
+    { "<leader>as", "<cmd>Copilot suggestion<CR>", desc = "Toggle Copilot Suggestion" },
+    { "<leader>ar", "<cmd>Copilot panel<CR>", desc = "Toggle Copilot Panel" },
+    { "<leader>at", "<cmd>Copilot toggle<CR>", desc = "Toggle Copilot" },
+  }
+})
