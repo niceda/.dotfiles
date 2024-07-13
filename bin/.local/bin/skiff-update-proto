@@ -1,16 +1,16 @@
 #!/bin/bash
 
-cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/actor/
+cd /Users/fida/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/actor/
 bash update.sh
-cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/grpc/
+cd /Users/fida/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/grpc/
 bash update.sh
-cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/devpub/
+cd /Users/fida/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/devpub/
 bash update.sh
-cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/thing/
-bash update.sh
-
-cd ~/Documents/Code/qz/repo/thing/sdk/thing-sdk-java/src/main/proto/
+cd /Users/fida/Documents/Code/qz/repo/thing/sdk/thing-sdk-iface-java/src/main/proto/thing/
 bash update.sh
 
-cp -r ~/Documents/Code/qz/repo/thing/common/proto/ ~/Documents/Code/qz/device-rust/proto/
-cp -r ~/Documents/Code/qz/repo/thing/common/grpc/ ~/Documents/Code/qz/device-rust/grpc/
+cd /Users/fida/Documents/Code/qz/repo/thing/sdk/thing-sdk-java/src/main/proto/
+bash update.sh
+
+#cp -r /Users/fida/Documents/Code/qz/repo/thing/common/proto/ /Users/fida/Documents/Code/qz/device-rust/proto/
+#cp -r /Users/fida/Documents/Code/qz/repo/thing/common/grpc/ /Users/fida/Documents/Code/qz/device-rust/grpc/
