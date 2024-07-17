@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /Users/fida/Documents/code/qz/inf/repo/thing/sdk/thing-sdk-iface-java/ || exit
+skiff-update-proto
+mvn -DskipTests deploy
