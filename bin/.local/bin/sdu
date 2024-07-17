@@ -5,7 +5,7 @@ cmake ..
 cd /Users/fida/Documents/code/qz/inf/repo/build/app/device/ || exit
 make device -j6
 strip -x -w --keep-file-symbols device
-cp device /Users/fida/Documents/code/qz/deploy/device/bin
+cp device /Users/fida/Documents/code/qz/work/deploy/device/bin
 rm device.gz
 gzip device
 curl -v --user 'xiongdajun:xiongdajun@skiff123' --upload-file "device.gz" https://nexus-inf.skiffenergy.com/repository/skiffenergy-bin-release/pkg/device-xdj.gz
