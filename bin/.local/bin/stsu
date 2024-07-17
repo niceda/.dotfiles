@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd /Users/fida/Documents/code/qz/inf/repo/build
+cmake ..
+make thing-server -j6
+cd /Users/fida/Documents/code/qz/inf/repo/build/app/thing-server
+strip -x -w --keep-file-symbols thing-server
+rm thing-server.gz
+gzip thing-server
+curl -v --user 'xiongdajun:xiongdajun@skiff123' --upload-file "thing-server.gz" https://nexus-inf.skiffenergy.com/repository/skiffenergy-bin-release/pkg/thing-server.gz
