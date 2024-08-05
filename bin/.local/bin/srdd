@@ -1,9 +1,0 @@
-#!/bin/bash
-
-cd /Users/fida/Documents/Code/qz/repo/build/app/device/
-make -j6
-strip -x -w --keep-file-symbols device
-rm device-xdj.gz
-mv device.gz device-xdj.gz
-gzip device
-scp -i ~/.ssh/id_rsa_phy10_zjk /Users/fida/Documents/Code/qz/repo/build/app/device/device.gz rd@zjk-rd.skiffenergy.com:/home/rd/

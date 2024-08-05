@@ -2,6 +2,7 @@
 # My configuration
 # ------------------------------
 
+source ~/.config/zsh/.env.zsh # load private env variables, example: password, tokens, etc
 source ~/.config/zsh/env.zsh
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/vi.zsh

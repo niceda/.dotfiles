@@ -1,8 +1,9 @@
 #!/usr/bin/expect
 
 set net [lindex $argv 0 ]
+set passwd ${SKIFF_TERMINAL_PASSWD}
 set timeout 10
 spawn ssh root@10.128.1.$net
 expect "password*"
-send "root@skiff123\r"
+send "${passwd}\r"
 interact
