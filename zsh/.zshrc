@@ -29,6 +29,10 @@ fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
 
+# GNU/Linux操作系统
+if [[ "$(uname -s | cut -c 1-5)" == "Linux" ]]; then
+. "$HOME/.atuin/bin/env"
+fi
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
