@@ -1,8 +1,0 @@
-require("user.plugins")
-require("user.options")
-require("user.keymappings")
-require("user.functions")
-require("user.lsp")
-require("user.autocommands")
-require("user.treesitter")
-require("user.telescope")
