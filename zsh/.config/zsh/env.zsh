@@ -37,8 +37,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# proxy
-
 # Add this to your shell configuration file (e.g., ~/.bashrc or ~/.zshrc)
 refreshenv() {
     source ~/.zshrc  # Replace with the path to your actual shell configuration file
@@ -48,6 +46,7 @@ refreshenv() {
 
 # Mac OS X 操作系统
 if [[ "$(uname)" == "Darwin" ]]; then
+# proxy
 export https_proxy=http://127.0.0.1:6152 http_proxy=http://127.0.0.1:6152 all_proxy=socks5://127.0.0.1:6153
 
 # java
