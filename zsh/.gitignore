@@ -2,3 +2,4 @@ ignore
 
 .zim/*
 .zim/zimfw.zsh
+.env.zsh
