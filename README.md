@@ -1,6 +1,8 @@
-# My dotfiles
+# 搭建属于你自己的终端环境
 
 ## Prerequisites
+
+确保你的系统中已经安装了以下软件，不然使用体验可能会受到影响
 
 - stow
 - tmux
@@ -165,24 +167,3 @@ z foo<SPACE><TAB>  # show interactive completions (zoxide v0.8.0+, bash 4.4+/fis
 | `<space><space>` | select dir |
 | `ec` | compress file |
 | `ex` | extract file |
-
-## neovim
-
-- [lazyvim](https://www.lazyvim.org/)
-
-## win
-
-### autohotkey
-
-#### winUtils.ahk: 一些常用的快捷键
-
-- win + q: 关闭当前窗口
-- win + Enter: 打开终端
-
-### windows Terminal
-
-## ideavimrc
-
-## surfing
-
-- [QuantumultX](https://apps.apple.com/us/app/quantumult-x/id1443988620)
