@@ -65,6 +65,8 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/protobuf@21/lib/pkgconfig"
 
 # GNU/Linux操作系统
 elif [[ "$(uname -s | cut -c 1-5)" == "Linux" ]]; then
+# FIXME:容器里面的tmux路径不对
+export TMUX_PROGRAM=$(which tmux)
 
 # Windows NT操作系统
 elif [[ "$(uname -s | cut -c 1-10)" == "MINGW32_NT" ]]; then
