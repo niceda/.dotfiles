@@ -40,16 +40,14 @@ nnoremap ]d :action GotoNextError<CR>
 nnoremap <c-g> :action Git.Menu<cr>
 
 
-" Lsp
-nnoremap <leader>lr :action RenameElement<CR>
-nnoremap <leader>lf :action ReformatCode<CR>
-nnoremap <leader>lk :action GotoPreviousError<CR>
-nnoremap <leader>lj :action GotoNextError<CR>
-nnoremap <leader>lg :action Generate<CR>
-nnoremap <leader>la :action ShowIntentionActions<CR>
-nnoremap <leader>lc :action GotoClass<CR>
-nnoremap <leader>ls :action GotoSymbol<CR>
-nnoremap <leader>lo :action FileStructurePopup<CR>
+" code
+nnoremap <leader>cr :action RenameElement<CR>
+nnoremap <leader>cf :action ReformatCode<CR>
+nnoremap <leader>cg :action Generate<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+nnoremap <leader>cc :action GotoClass<CR>
+nnoremap <leader>ss :action GotoSymbol<CR>
+nnoremap <leader>co :action FileStructurePopup<CR>
 
 " Debug
 nnoremap <leader>ds :action Debug<cr>
