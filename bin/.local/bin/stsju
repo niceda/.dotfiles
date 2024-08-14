@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /Users/fida/Documents/code/qz/inf/repo/thing/sdk/thing-sdk-java/ || exit
-skiff-update-proto
+cd /Users/fida/Documents/code/qz/inf/repo/thing/sdk/java/ || exit
+sup
 mvn -DskipTests deploy
