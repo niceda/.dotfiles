@@ -48,6 +48,10 @@ refreshenv() {
 if [[ "$(uname)" == "Darwin" ]]; then
 # proxy
 export https_proxy=http://127.0.0.1:6152 http_proxy=http://127.0.0.1:6152 all_proxy=socks5://127.0.0.1:6153
+# python
+if [[ -d "$HOME/Library/Python/venv/" ]]; then
+  source "$HOME/Library/Python/venv/bin/activate"
+fi
 
 # java
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
@@ -72,4 +76,3 @@ export TMUX_PROGRAM=$(which tmux)
 elif [[ "$(uname -s | cut -c 1-10)" == "MINGW32_NT" ]]; then
 
 fi
-
