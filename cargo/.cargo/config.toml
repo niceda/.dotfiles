@@ -9,5 +9,5 @@ index = "https://rsproxy.cn/crates.io-index"
 [net]
 git-fetch-with-cli = true
 
-# [build]
-# target-dir = "/Users/fida/.target"
+[build]
+target-dir = "/Users/fida/.target"
