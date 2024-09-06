@@ -35,3 +35,4 @@ fi
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
