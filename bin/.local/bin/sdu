@@ -3,7 +3,7 @@
 cd /Users/fida/Documents/code/qz/inf/repo/build/ || exit
 cmake ..
 cd /Users/fida/Documents/code/qz/inf/repo/build/app/device/ || exit
-make device -j6
+make device -j4
 strip -x -w --keep-file-symbols device
 cp device /Users/fida/Documents/code/qz/work/deploy/device/bin
 rm device.gz

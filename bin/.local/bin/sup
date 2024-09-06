@@ -6,7 +6,7 @@ cd /Users/fida/Documents/Code/qz/inf/repo/thing/sdk/iface-java/src/main/proto/gr
 bash update.sh
 cd /Users/fida/Documents/Code/qz/inf/repo/thing/sdk/iface-java/src/main/proto/devpub/
 bash update.sh
-cd /Users/fida/Documents/Code/qz/inf/repo/thing/sdk/iface-java/src/main/proto/thing/
+cd /Users/fida/Documents/Code/qz/inf/repo/thing/sdk/iface-java/src/main/proto/
 bash update.sh
 
 cd /Users/fida/Documents/Code/qz/inf/repo/thing/sdk/java/src/main/proto/
