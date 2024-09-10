@@ -25,28 +25,33 @@ let g:argtextobj_pairs="[:],(:),<:>"
 """ Mappings --------------------------------
 " base
 nnoremap Y y$
-nnoremap gl <ESC>:action ShowErrorDescription<CR>
-nnoremap gI :action GotoImplementation<cr>
-nnoremap gr :action FindUsages<cr>
-nnoremap <leader><CR> :nohlsearch<cr>
+nmap K <Action>(ShowHoverInfo)
+nmap <S-h> :bnext<CR>
+nmap <S-l> :bprevious<CR>
+nmap gl <Action>(ShowErrorDescription)
+nmap gI <Action>(GotoImplementation)
+nmap gr <Action>(FindUsages)
+nmap <ESC><ESC> :nohlsearch<cr>
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-h> <c-w>h
 nnoremap <c-k> <c-w>k
 
 " navigation
-nnoremap [d :action GotoPreviousError<CR>
-nnoremap ]d :action GotoNextError<CR>
-nnoremap <c-g> :action Git.Menu<cr>
-
+nmap [f <Action>(MethodUp)
+nmap ]f <Action>(MethodDown)
+nmap [e <Action>(GotoPreviousError)
+nmap ]e <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
 
 " code
+nmap <leader>ch <Action>(CIDR.Lang.SwitchHeaderSource)
 nnoremap <leader>cr :action RenameElement<CR>
 nnoremap <leader>cf :action ReformatCode<CR>
 nnoremap <leader>cg :action Generate<CR>
 nnoremap <leader>ca :action ShowIntentionActions<CR>
 nnoremap <leader>cc :action GotoClass<CR>
-nnoremap <leader>ss :action GotoSymbol<CR>
 nnoremap <leader>co :action FileStructurePopup<CR>
 
 " Debug
@@ -58,11 +63,12 @@ nnoremap <leader>do :action StepOver<CR>
 
 " Search && Replace
 nnoremap <leader>P :action ManageRecentProjects<CR>
-nnoremap <Leader>sf <ESC>:action GotoFile<CR>
+nnoremap <leader>ss :action GotoSymbol<CR>
+nnoremap <leader>sf <ESC>:action GotoFile<CR>
+nnoremap <leader><leader> <ESC>:action GotoFile<CR>
 nnoremap <leader>st :action FindInPath<CR>
 nnoremap <leader>sc :action GotoAction<cr>
 nnoremap <leader>rf :action ReplaceInPath<CR>
 
-" Other
-nnoremap <leader>be :action CloseAllEditorsButActive<CR>
-nnoremap <leader>E :action Switcher<cr>
+" git
+nnoremap <c-g> :action Git.Menu<cr>
