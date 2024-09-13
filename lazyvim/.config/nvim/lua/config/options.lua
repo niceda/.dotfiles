@@ -5,19 +5,20 @@
 local opt = vim.opt
 
 opt.relativenumber = false -- Relative line numbers
+opt.fileencodings = "utf-8,ucs-bom,gb18030,gbk,gb2312,cp936" -- File encoding
 
 vim.g.autoformat = false
 
 -- Set a compatible clipboard manager
 if vim.fn.has("wsl") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
-	vim.g.clipboard = {
-		copy = {
-			["+"] = "win32yank.exe -i --crlf",
-			["*"] = "win32yank.exe -i --crlf",
-		},
-		paste = {
-			["+"] = "win32yank.exe -o --lf",
-			["*"] = "win32yank.exe -o --lf",
-		},
-	}
+  vim.g.clipboard = {
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
+  }
 end
