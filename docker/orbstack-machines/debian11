@@ -1,7 +1,15 @@
+
+https://github.com/neovim/neovim
+https://github.com/junegunn/fzf
+https://github.com/BurntSushi/ripgrep/
+https://www.yunieebk.com/2023/07/30/debian-11-%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0node-js/
+
 cd ~
+sudo apt update && sudo apt upgrade
+sudo apt install gcc g++ cmake git curl wget openjdk-11-jdk stow ranger libsystemd-dev clangd clang-format gdb tmux ripgrep
 git clone https://github.com/niceda/.dotfiles.git
-rm .bashrc
 cd .dotfiles
-stow bash
 stow git
-sudo apt install gcc g++ cmake git curl wget openjdk-11-jdk stow ranger libsystemd-dev clangd clang-format gdb
+stow lazyvim
+stow ranger
+stow tmux
