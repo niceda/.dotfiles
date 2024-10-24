@@ -22,3 +22,17 @@ if vim.fn.has("wsl") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win64") == 
     },
   }
 end
+
+-- TODO: 1. 判断是否在 orbstack 容器里面 2. 同时将内容发送到tmux的剪贴板
+if vim.fn.has("unix") == 1 then
+  vim.g.clipboard = {
+    copy = {
+      ["+"] = "pbcopy",
+      ["*"] = "pbcopy",
+    },
+    paste = {
+      ["+"] = "pbpaste",
+      ["*"] = "pbpaste",
+    },
+  }
+end
