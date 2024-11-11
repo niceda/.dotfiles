@@ -40,11 +40,6 @@ keymap("n", "gl", function()
   end
 end, { noremap = true, silent = true, desc = "Show line diagnostics" })
 
-vim.keymap.del("t", "<C-h>")
-vim.keymap.del("t", "<C-j>")
-vim.keymap.del("t", "<C-k>")
-vim.keymap.del("t", "<C-l>")
-
 -- Better paste and copy
 -- remap "p" in visual mode to delete the highlighted text without overwriting your yanked/copied text, and then paste the content from the unnamed register.
 keymap("v", "p", '"_dP', opts)
