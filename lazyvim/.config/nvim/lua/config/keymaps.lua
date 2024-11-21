@@ -8,12 +8,12 @@ local keymap = vim.keymap.set
 
 -- git
 keymap("n", "<C-g>", function()
-  LazyVim.lazygit({ cwd = LazyVim.root.git() })
+  Snacks.lazygit({ cwd = LazyVim.root.git() })
 end, { desc = "Lazygit (Root Dir)" })
 
 keymap("n", "<leader>gf", function()
   local git_path = vim.api.nvim_buf_get_name(0)
-  LazyVim.lazygit({ cwd = LazyVim.root.git(), args = { "-f", vim.trim(git_path) } })
+  Snacks.lazygit({ cwd = LazyVim.root.git(), args = { "-f", vim.trim(git_path) } })
 end, { desc = "Lazygit Current File History" })
 
 -- keymap("n", "<leader>ge", function()

@@ -8,6 +8,7 @@ opt.relativenumber = false -- Relative line numbers
 opt.fileencodings = "utf-8,ucs-bom,gb18030,gbk,gb2312,cp936" -- File encoding
 
 vim.g.autoformat = false
+vim.g.root_spec = { { ".git", "lua" }, "lsp", "cwd" }
 
 -- Set a compatible clipboard manager
 if vim.fn.has("wsl") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
