@@ -8,4 +8,5 @@
 *.iml
 build*/
 !build_support/
+!build_tools/
 compile_commands.json
