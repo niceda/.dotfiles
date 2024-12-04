@@ -27,8 +27,7 @@ export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
-# export LC_CTYPE=zh_CN.UTF-8
-# export LC_ALL=zh_CN.UTF-8
+export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
