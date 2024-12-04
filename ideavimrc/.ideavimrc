@@ -21,15 +21,17 @@ set commentary
 set argtextobj
 set textobj-entire
 let g:argtextobj_pairs="[:],(:),<:>"
+map s <Action>(flash.search)
 
 """ Mappings --------------------------------
 " base
 nnoremap Y y$
 nmap K <Action>(ShowHoverInfo)
-nmap <S-h> :bnext<CR>
-nmap <S-l> :bprevious<CR>
+nmap <S-l> :bnext<CR>
+nmap <S-h> :bprevious<CR>
 nmap gl <Action>(ShowErrorDescription)
 nmap gI <Action>(GotoImplementation)
+nmap gD <Action>(GotoSuperMethod)
 nmap gr <Action>(FindUsages)
 nmap <ESC><ESC> :nohlsearch<cr>
 nnoremap <c-l> <c-w>l
@@ -44,9 +46,11 @@ nmap [e <Action>(GotoPreviousError)
 nmap ]e <Action>(GotoNextError)
 nmap [d <Action>(GotoPreviousError)
 nmap ]d <Action>(GotoNextError)
+nmap [h <Action>(VcsShowPrevChangeMarker)
+nmap ]h <Action>(VcsShowNextChangeMarker)
 
 " code
-nmap <leader>ch <Action>(CIDR.Lang.SwitchHeaderSource)
+nmap <leader>ch <Action>(SwitchHeaderSource)
 nnoremap <leader>cr :action RenameElement<CR>
 nnoremap <leader>cf :action ReformatCode<CR>
 nnoremap <leader>cg :action Generate<CR>
@@ -69,6 +73,16 @@ nnoremap <leader><leader> <ESC>:action GotoFile<CR>
 nnoremap <leader>st :action FindInPath<CR>
 nnoremap <leader>sc :action GotoAction<cr>
 nnoremap <leader>rf :action ReplaceInPath<CR>
+nmap <leader>/ <Action>(TextSearchAction)
 
 " git
 nnoremap <c-g> :action Git.Menu<cr>
+vnoremap <c-g> :action Git.Menu<cr>
+nmap <leader>gf <Action>(Vcs.ShowTabbedFileHistory)
+nmap <leader>ghr <Action>(Vcs.RollbackChangedLines)
+
+" Build & Run
+" FIXME: don't effect 
+" nmap <leader>rb <Action>(RedesignedRunConfigurationSelector)
+nmap <leader>rb <Action>(CidrBuildRunToolbar)
+nmap <leader>rr <Action>(Run)
