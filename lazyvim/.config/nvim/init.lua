@@ -117,6 +117,9 @@ if vim.g.vscode then
   vim.g.markdown_recommended_style = 0
 
   ------------------------------ config.keymaps ------------------------------
+  -- base
+  vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
+
   -- Code navigation
   vim.keymap.set("n", "gr", [[<cmd>lua require('vscode').action('editor.action.referenceSearch.trigger')<cr>]])
 

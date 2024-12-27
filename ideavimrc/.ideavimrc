@@ -67,7 +67,8 @@ nnoremap <leader>do :action StepOver<CR>
 
 " Search && Replace
 nnoremap <leader>P :action ManageRecentProjects<CR>
-nnoremap <leader>ss :action GotoSymbol<CR>
+nmap <leader>ss <Action>(FileStructurePopup)
+nnoremap <leader>sS :action GotoSymbol<CR>
 nnoremap <leader>sf <ESC>:action GotoFile<CR>
 nnoremap <leader><leader> <ESC>:action GotoFile<CR>
 nnoremap <leader>st :action FindInPath<CR>

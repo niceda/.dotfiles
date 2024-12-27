@@ -1,0 +1,9 @@
+#!/usr/bin/expect
+
+set timeout 2
+spawn ssh -p2222 xiongdajun@jumpserver-inf.skiffenergy.com
+expect {
+"*yes/no" { send "yes\r"; exp_continue }
+"*password:" { send "xiongdajun@skiff321\r"; exp_continue }
+}
+interact
