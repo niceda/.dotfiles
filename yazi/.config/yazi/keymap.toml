@@ -130,11 +130,11 @@ keymap = [
 	{ on = [ "g", "c", "v" ],  run = "cd ~/.config/nvim/",                      desc = "Goto ~/.config/nvim/" },
 	{ on = [ "g", "c", "z" ],  run = "cd ~/.config/zsh",                        desc = "Goto ~/.config/zsh/" },
 	{ on = [ "g", "c", "t" ],  run = "shell --block \"nvim ~/.tmux.conf\"",     desc = "Edit ~/.tmux.conf" },
-	{ on = [ "g", "d", "d"],   run = "cd ~/Documents/",                         desc = "Goto ~/Documents/" },
-	{ on = [ "g", "d", "m"],   run = "cd ~/Documents/code/niceda/",             desc = "Goto ~/Documents/code/niceda/" },
-	{ on = [ "g", "d", "o"],   run = "cd ~/Documents/code/open-source/",        desc = "Goto ~/Documents/code/open-source/" },
-	{ on = [ "g", "d", "s"],   run = "cd ~/Documents/code/skiff/",              desc = "Goto ~/Documents/code/skiff/" },
-	{ on = [ "g", "D" ],       run = "cd ~/Downloads",                          desc = "Goto ~/Downloads" },
+	{ on = [ "g", "d", "d"],   run = "cd /Users/fida/Documents/",                         desc = "Goto ~/Documents/" },
+	{ on = [ "g", "d", "m"],   run = "cd /Users/fida/Documents/code/niceda/",             desc = "Goto ~/Documents/code/niceda/" },
+	{ on = [ "g", "d", "o"],   run = "cd /Users/fida/Documents/code/open-source/",        desc = "Goto ~/Documents/code/open-source/" },
+	{ on = [ "g", "d", "s"],   run = "cd /Users/fida/Documents/code/skiff/",              desc = "Goto ~/Documents/code/skiff/" },
+	{ on = [ "g", "D" ],       run = "cd /Users/fida/Downloads",                          desc = "Goto ~/Downloads" },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive",                        desc = "Jump interactively" },
 
 	# Tabs
