@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cd /Users/fida/Documents/code/niceda/dpoll/ || exit
-cargo build --release
+cd /Users/fida/Documents/code/niceda/repo-cpp/ || exit
+cargo build --bin dpoll --release
 cd /Users/fida/.target/release/ || exit
 mv dpoll.gz dpoll-pre.gz
 gzip -f dpoll
