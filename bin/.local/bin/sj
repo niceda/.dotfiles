@@ -1,6 +1,6 @@
 #!/usr/bin/expect
 
-set timeout 2
+set timeout 5
 spawn ssh -p2222 xiongdajun@jumpserver-inf.skiffenergy.com
 expect {
 "*yes/no" { send "yes\r"; exp_continue }
