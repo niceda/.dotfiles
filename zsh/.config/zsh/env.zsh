@@ -4,6 +4,8 @@
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH=$HOME/.local/bin:$PATH
+export PATH="$PATH:$HOME/.influxdb/"
+export PATH="$PATH:$HOME/.tiup/bin/"
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export LOCALBIN=$XDG_CONFIG_HOME/bin
