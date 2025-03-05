@@ -27,11 +27,12 @@ map s <Action>(flash.search)
 " base
 nnoremap Y y$
 nmap K <Action>(ShowHoverInfo)
-nmap <S-l> :bnext<CR>
-nmap <S-h> :bprevious<CR>
+"nmap <S-l> :bnext<CR>
+"nmap <S-h> :bprevious<CR>
 nmap gl <Action>(ShowErrorDescription)
 nmap gI <Action>(GotoImplementation)
-nmap gD <Action>(GotoSuperMethod)
+"nmap gD <Action>(GotoSuperMethod)
+nmap gD <Action>(GotoDeclarationOnly)
 nmap gr <Action>(FindUsages)
 nmap <ESC><ESC> :nohlsearch<cr>
 nnoremap <c-l> <c-w>l
@@ -48,6 +49,9 @@ nmap [d <Action>(GotoPreviousError)
 nmap ]d <Action>(GotoNextError)
 nmap [h <Action>(VcsShowPrevChangeMarker)
 nmap ]h <Action>(VcsShowNextChangeMarker)
+
+" buffer
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
 
 " code
 nmap <leader>ch <Action>(SwitchHeaderSource)

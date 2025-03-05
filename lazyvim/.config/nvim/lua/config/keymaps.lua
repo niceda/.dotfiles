@@ -52,15 +52,3 @@ keymap("n", "<C-c>", ":%y+<CR>", opts)
 keymap("n", "<leader>r", ":call CompileRunGcc()<CR>", opts)
 keymap("n", "<C-q>", ":call QuickFixToggle()<CR>", opts)
 -- keymap("n", "<leader>L", "<cmd>Lazy<cr>", opts)
-
--- which-key
--- copilot
-local wk = require("which-key")
-wk.add({
-  {
-    mode = { "n", "v" },
-    { "<leader>as", "<cmd>Copilot suggestion<CR>", desc = "Toggle Copilot Suggestion" },
-    { "<leader>ar", "<cmd>Copilot panel<CR>", desc = "Toggle Copilot Panel" },
-    { "<leader>at", "<cmd>Copilot toggle<CR>", desc = "Toggle Copilot" },
-  }
-})
