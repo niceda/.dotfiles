@@ -1,0 +1,102 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "Hack Nerd Font, JetBrainsMono Nerd Font",
+    "editor.fontSize": 16,
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Arch (WSL)": {
+            "path": "C:\\WINDOWS\\System32\\wsl.exe",
+            "args": [
+                "-d",
+                "Arch"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Arch (WSL)",
+    "[cpp]": {
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "[c]": {
+        "editor.tabSize": 4
+    },
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.formatOnType": true
+    },
+    "git.enabled": false,
+    "remote.SSH.remotePlatform": {
+        "192.168.181.129": "linux",
+        "8.130.14.65": "linux",
+        "10.128.1.62": "linux",
+        "10.128.1.61": "linux",
+        "10.128.1.53": "linux",
+        "localhost": "linux",
+        "localhost2222": "linux",
+        "localhost8888": "linux",
+        "localhost6666": "linux"
+    },
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false,
+        "yaml": false,
+        "cpp": true
+    },
+    "code-runner.saveFileBeforeRun": true,
+    "extensions.ignoreRecommendations": true,
+    "editor.minimap.enabled": false,
+    "editor.inlayHints.enabled": "on",
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "info"
+    ],
+    "workbench.iconTheme": "catppuccin-mocha",
+    "gitlens.advanced.messages": {
+        "suppressGitDisabledWarning": true,
+        "suppressGitMissingWarning": true
+    },
+    "redhat.telemetry.enabled": false,
+    "remote.extensionKind": {
+        "GitHub.copilot": [
+            "ui"
+        ],
+        "github.copilot-chat": [
+            "ui"
+        ]
+    },
+    "editor.accessibilitySupport": "on",
+    "[proto3]": {
+        "editor.defaultFormatter": "zxh404.vscode-proto3"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "workbench.colorTheme": "Catppuccin Mocha",
+    // "catppuccin.accentColor": "pink",
+    "catppuccin.colorOverrides": {
+        "mocha": {
+            "base": "#000000",
+            "mantle": "#010101",
+            "crust": "#020202"
+        }
+    },
+    "catppuccin.customUIColors": {
+        "mocha": {
+            "statusBar.foreground": "accent"
+        }
+    },
+    "cursor.cpp.disabledLanguages": [
+        "plaintext",
+        "scminput",
+        "yaml"
+    ]
+}
