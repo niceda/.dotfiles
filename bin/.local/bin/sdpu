@@ -2,7 +2,7 @@
 
 cd /Users/fida/Documents/code/niceda/repo-cpp/ || exit
 cargo build --bin dpoll --release
-cd /Users/fida/.target/release/ || exit
+cd ~/.target/release/ || exit
 mv dpoll.gz dpoll-pre.gz
 gzip -f dpoll
 curl -v --user "${SKIFF_LDAP_USER}":"${SKIFF_LDAP_PASSWD}" --upload-file "dpoll.gz" https://nexus-inf.skiffenergy.com/repository/skiffenergy-bin-release/pkg/dpoll.gz

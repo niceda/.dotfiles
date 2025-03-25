@@ -24,6 +24,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+export CARGO_TARGET_DIR="$HOME/.target"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
