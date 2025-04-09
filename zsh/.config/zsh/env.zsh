@@ -49,7 +49,7 @@ refreshenv() {
 # Mac OS X 操作系统
 if [[ "$(uname)" == "Darwin" ]]; then
 # proxy
-export https_proxy=http://127.0.0.1:6152 http_proxy=http://127.0.0.1:6152 all_proxy=socks5://127.0.0.1:6153
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
 # python
 if [[ -d "$HOME/Library/Python/venv/" ]]; then
   source "$HOME/Library/Python/venv/bin/activate"
