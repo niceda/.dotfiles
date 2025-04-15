@@ -2,7 +2,6 @@
     "files.autoSave": "onFocusChange",
     "editor.fontFamily": "Hack Nerd Font, JetBrainsMono Nerd Font",
     "editor.fontSize": 15,
-    "editor.inlineSuggest.enabled": true,
     "editor.minimap.enabled": false,
     "editor.inlayHints.enabled": "on",
     "editor.accessibilitySupport": "on",
@@ -27,24 +26,28 @@
             "statusBar.foreground": "accent"
         }
     },
+    "[markdown]": {
+        "editor.tabSize": 4
+    },
     "[cpp]": {
         "editor.tabSize": 4,
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
     "[c]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
     "[python]": {
         "editor.tabSize": 4,
         "editor.formatOnType": true
     },
     "github.copilot.enable": {
-        "*": true,
+        "*": false,
         "plaintext": false,
         "markdown": true,
         "scminput": false,
         "yaml": false,
-        "cpp": true
+        "cpp": false
     },
     "remote.extensionKind": {
         "GitHub.copilot": [
@@ -68,4 +71,12 @@
         "scminput",
         "yaml"
     ],
+    "git.openRepositoryInParentFolders": "always",
+    "workbench.editorLargeFileConfirmation": 30,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "extensions.ignoreRecommendations": true,
+    "switch2obsidian.obsidianVaultPath": "/Users/fida/Library/Mobile Documents/iCloud~md~obsidian/Documents/ob",
+    "markdown-image.local.path": "/Attachments",
+    "git.autoRepositoryDetection": "subFolders",
+    "gitlens.advanced.fileHistoryShowAllBranches": true,
 }
