@@ -46,6 +46,12 @@ refreshenv() {
     echo "Environment variables refreshed!"
 }
 
+noproxy() {
+  unset https_proxy
+  unset http_proxy
+  unset all_proxy
+}
+
 # Mac OS X 操作系统
 if [[ "$(uname)" == "Darwin" ]]; then
 # proxy
