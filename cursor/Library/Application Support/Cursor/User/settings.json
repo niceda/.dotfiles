@@ -41,14 +41,6 @@
         "editor.tabSize": 4,
         "editor.formatOnType": true
     },
-    "github.copilot.enable": {
-        "*": false,
-        "plaintext": false,
-        "markdown": true,
-        "scminput": false,
-        "yaml": false,
-        "cpp": false
-    },
     "remote.extensionKind": {
         "GitHub.copilot": [
             "ui"
@@ -78,5 +70,5 @@
     "switch2obsidian.obsidianVaultPath": "/Users/fida/Library/Mobile Documents/iCloud~md~obsidian/Documents/ob",
     "markdown-image.local.path": "/Attachments",
     "git.autoRepositoryDetection": "subFolders",
-    "gitlens.advanced.fileHistoryShowAllBranches": true,
+    "gitlens.advanced.fileHistoryShowAllBranches": true
 }
